@@ -1,0 +1,15 @@
+{
+  "category": "building",
+  "group": "wooden_slab",
+  "key": {
+    "#": "regions_unexplored:palm_planks"
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "regions_unexplored:palm_slab"
+  },
+  "type": "minecraft:crafting_shaped"
+}

@@ -1,0 +1,36 @@
+{
+  "config": {
+    "branch_provider": {
+      "state": {
+        "id": "regions_unexplored:birch_branch",
+        "properties": {
+          "facing": "north"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "foliage_provider": {
+      "state": {
+        "id": "minecraft:birch_leaves",
+        "properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "minimum_size": 4,
+    "size_variation": 3,
+    "trunk_provider": {
+      "state": {
+        "id": "minecraft:birch_log",
+        "properties": {
+          "axis": "y"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "regions_unexplored:aspen_tree"
+}

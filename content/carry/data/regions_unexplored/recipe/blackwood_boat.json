@@ -1,0 +1,16 @@
+{
+  "category": "misc",
+  "group": "boat",
+  "key": {
+    "#": "regions_unexplored:blackwood_planks"
+  },
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:blackwood_boat"
+  },
+  "type": "minecraft:crafting_shaped"
+}

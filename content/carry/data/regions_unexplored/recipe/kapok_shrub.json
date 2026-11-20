@@ -1,0 +1,16 @@
+{
+  "category": "misc",
+  "group": "shrubs",
+  "key": {
+    "#": "regions_unexplored:kapok_sapling"
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:kapok_shrub"
+  },
+  "type": "minecraft:crafting_shaped"
+}

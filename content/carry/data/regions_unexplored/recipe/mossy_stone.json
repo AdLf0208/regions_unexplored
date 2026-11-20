@@ -1,0 +1,13 @@
+{
+  "category": "building",
+  "group": "mossy",
+  "ingredients": [
+    "minecraft:stone",
+    "minecraft:vine"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:mossy_stone"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "orange_dye",
+  "ingredients": [
+    "regions_unexplored:cave_hyssop"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:orange_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

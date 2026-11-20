@@ -1,0 +1,45 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "children": [
+            {
+              "condition": "minecraft:tool/can_silk_touch",
+              "name": "regions_unexplored:ash",
+              "type": "minecraft:item"
+            },
+            {
+              "children": [
+                {
+                  "condition": {
+                    "chances": [
+                      1.0
+                    ],
+                    "enchantment": "minecraft:silk_touch",
+                    "type": "minecraft:table_bonus"
+                  },
+                  "name": "regions_unexplored:ash",
+                  "type": "minecraft:item"
+                },
+                {
+                  "name": "minecraft:flint",
+                  "type": "minecraft:item"
+                }
+              ],
+              "condition": {
+                "type": "minecraft:survives_explosion"
+              },
+              "type": "minecraft:alternatives"
+            }
+          ],
+          "type": "minecraft:alternatives"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "regions_unexplored:blocks/ash",
+  "type": "minecraft:block"
+}

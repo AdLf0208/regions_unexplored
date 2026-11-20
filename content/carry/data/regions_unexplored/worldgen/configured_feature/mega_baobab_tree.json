@@ -1,0 +1,36 @@
+{
+  "config": {
+    "branch_provider": {
+      "state": {
+        "id": "regions_unexplored:baobab_branch",
+        "properties": {
+          "facing": "north"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "foliage_provider": {
+      "state": {
+        "id": "regions_unexplored:baobab_leaves",
+        "properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "minimum_size": 5,
+    "size_variation": 5,
+    "trunk_provider": {
+      "state": {
+        "id": "regions_unexplored:baobab_log",
+        "properties": {
+          "axis": "y"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "regions_unexplored:mega_baobab_tree"
+}

@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "stick",
+  "ingredients": [
+    "regions_unexplored:spruce_branch"
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:stick"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

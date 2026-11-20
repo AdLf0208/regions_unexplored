@@ -1,0 +1,13 @@
+{
+  "category": "building",
+  "group": "snowbelle",
+  "ingredients": [
+    "#c:brown_dyes",
+    "#regions_unexplored:snowbelle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:brown_snowbelle"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

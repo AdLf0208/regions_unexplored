@@ -1,0 +1,14 @@
+{
+  "template": "minecraft:dirt",
+  "state_properties": {
+    "smouldering": {
+      "type": "boolean"
+    }
+  },
+  "default_state": {
+    "smouldering": "false"
+  },
+  "properties": {
+    "random_ticks": false
+  }
+}

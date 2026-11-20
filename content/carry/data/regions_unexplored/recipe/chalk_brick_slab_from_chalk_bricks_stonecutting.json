@@ -1,0 +1,8 @@
+{
+  "ingredient": "regions_unexplored:chalk_bricks",
+  "result": {
+    "count": 2,
+    "id": "regions_unexplored:chalk_brick_slab"
+  },
+  "type": "minecraft:stonecutting"
+}

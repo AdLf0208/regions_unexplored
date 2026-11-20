@@ -1,0 +1,12 @@
+{
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    "#regions_unexplored:magnolia_logs_item"
+  ],
+  "result": {
+    "count": 4,
+    "id": "regions_unexplored:magnolia_planks"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

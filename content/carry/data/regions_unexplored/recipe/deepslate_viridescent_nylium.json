@@ -1,0 +1,17 @@
+{
+  "category": "building",
+  "group": "viridescent_nylium",
+  "key": {
+    "#": "minecraft:deepslate",
+    "X": "#c:mushrooms"
+  },
+  "pattern": [
+    "X",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:deepslate_viridescent_nylium"
+  },
+  "type": "minecraft:crafting_shaped"
+}

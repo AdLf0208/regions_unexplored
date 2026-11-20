@@ -1,0 +1,17 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "condition": "minecraft:tool/can_silk_touch",
+      "entries": [
+        {
+          "name": "regions_unexplored:prismaglass",
+          "type": "minecraft:item"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "regions_unexplored:blocks/prismaglass",
+  "type": "minecraft:block"
+}

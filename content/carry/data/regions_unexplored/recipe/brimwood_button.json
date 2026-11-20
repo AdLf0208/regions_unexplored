@@ -1,0 +1,12 @@
+{
+  "category": "redstone",
+  "group": "wooden_button",
+  "ingredients": [
+    "regions_unexplored:brimwood_planks"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:brimwood_button"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

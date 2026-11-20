@@ -1,0 +1,19 @@
+{
+  "template": "minecraft:oak_leaves",
+  "state_properties": {
+    "half": {
+      "type": "enum",
+      "values": [
+        "lower",
+        "upper"
+      ]
+    },
+    "natural": {
+      "type": "boolean"
+    }
+  },
+  "default_state": {
+    "half": "lower",
+    "natural": "false"
+  }
+}

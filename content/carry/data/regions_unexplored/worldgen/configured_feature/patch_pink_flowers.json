@@ -1,0 +1,53 @@
+{
+  "config": {
+    "feature": {
+      "feature": {
+        "config": {
+          "to_place": {
+            "entries": [
+              {
+                "data": {
+                  "id": "regions_unexplored:fireweed"
+                },
+                "weight": 3
+              },
+              {
+                "data": {
+                  "id": "regions_unexplored:tsubaki"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "id": "regions_unexplored:pink_lupine"
+                },
+                "weight": 3
+              },
+              {
+                "data": {
+                  "id": "minecraft:pink_tulip"
+                },
+                "weight": 3
+              }
+            ],
+            "type": "minecraft:weighted_state_provider"
+          }
+        },
+        "type": "minecraft:simple_block"
+      },
+      "placement": [
+        {
+          "predicate": {
+            "blocks": "minecraft:air",
+            "type": "minecraft:matching_blocks"
+          },
+          "type": "minecraft:block_predicate_filter"
+        }
+      ]
+    },
+    "tries": 96,
+    "xz_spread": 7,
+    "y_spread": 3
+  },
+  "type": "minecraft:flower"
+}

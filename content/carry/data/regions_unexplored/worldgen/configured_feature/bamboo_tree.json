@@ -1,0 +1,54 @@
+{
+  "config": {
+    "branch_provider": {
+      "state": {
+        "id": "regions_unexplored:oak_branch",
+        "properties": {
+          "facing": "north"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "foliage_provider": {
+      "state": {
+        "id": "regions_unexplored:bamboo_leaves",
+        "properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "minimum_size": 12,
+    "size_variation": 8,
+    "trunk_provider": {
+      "entries": [
+        {
+          "data": {
+            "id": "regions_unexplored:bamboo_log",
+            "properties": {
+              "axis": "y",
+              "leaves": "false",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 1
+        },
+        {
+          "data": {
+            "id": "regions_unexplored:bamboo_log",
+            "properties": {
+              "axis": "y",
+              "leaves": "true",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 2
+        }
+      ],
+      "type": "minecraft:weighted_state_provider"
+    }
+  },
+  "type": "regions_unexplored:bamboo_tree"
+}

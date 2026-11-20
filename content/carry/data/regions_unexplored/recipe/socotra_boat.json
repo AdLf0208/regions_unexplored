@@ -1,0 +1,16 @@
+{
+  "category": "misc",
+  "group": "boat",
+  "key": {
+    "#": "regions_unexplored:socotra_planks"
+  },
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:socotra_boat"
+  },
+  "type": "minecraft:crafting_shaped"
+}

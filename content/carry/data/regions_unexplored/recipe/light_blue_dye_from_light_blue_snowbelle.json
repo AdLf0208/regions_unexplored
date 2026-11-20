@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "light_blue_dye",
+  "ingredients": [
+    "regions_unexplored:light_blue_snowbelle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:light_blue_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

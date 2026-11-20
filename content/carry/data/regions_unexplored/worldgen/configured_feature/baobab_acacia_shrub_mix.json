@@ -1,0 +1,28 @@
+{
+  "config": {
+    "sapling_provider": {
+      "entries": [
+        {
+          "data": {
+            "id": "regions_unexplored:baobab_shrub",
+            "properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 2
+        },
+        {
+          "data": {
+            "id": "regions_unexplored:acacia_shrub",
+            "properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 1
+        }
+      ],
+      "type": "minecraft:weighted_state_provider"
+    }
+  },
+  "type": "regions_unexplored:shrub"
+}

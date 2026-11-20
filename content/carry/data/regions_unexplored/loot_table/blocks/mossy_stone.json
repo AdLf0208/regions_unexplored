@@ -1,0 +1,29 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "children": [
+            {
+              "condition": "minecraft:tool/can_silk_touch",
+              "name": "regions_unexplored:mossy_stone",
+              "type": "minecraft:item"
+            },
+            {
+              "condition": {
+                "type": "minecraft:survives_explosion"
+              },
+              "name": "minecraft:mossy_cobblestone",
+              "type": "minecraft:item"
+            }
+          ],
+          "type": "minecraft:alternatives"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "regions_unexplored:blocks/mossy_stone",
+  "type": "minecraft:block"
+}

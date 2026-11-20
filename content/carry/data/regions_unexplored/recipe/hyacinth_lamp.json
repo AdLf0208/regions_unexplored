@@ -1,0 +1,17 @@
+{
+  "category": "misc",
+  "group": "hyacinth",
+  "key": {
+    "#": "minecraft:prismarine_slab",
+    "X": "#regions_unexplored:hyacinth_blooms"
+  },
+  "pattern": [
+    "X",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:hyacinth_lamp"
+  },
+  "type": "minecraft:crafting_shaped"
+}

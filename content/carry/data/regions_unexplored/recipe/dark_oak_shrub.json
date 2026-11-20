@@ -1,0 +1,16 @@
+{
+  "category": "misc",
+  "group": "shrubs",
+  "key": {
+    "#": "minecraft:dark_oak_sapling"
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:dark_oak_shrub"
+  },
+  "type": "minecraft:crafting_shaped"
+}

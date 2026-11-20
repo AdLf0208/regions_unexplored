@@ -1,0 +1,14 @@
+{
+  "config": {
+    "sapling_provider": {
+      "state": {
+        "id": "regions_unexplored:golden_larch_shrub",
+        "properties": {
+          "half": "lower"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "regions_unexplored:shrub"
+}

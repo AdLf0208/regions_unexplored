@@ -1,0 +1,8 @@
+{
+  "ingredient": "regions_unexplored:polished_chalk",
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:chalk_pillar"
+  },
+  "type": "minecraft:stonecutting"
+}

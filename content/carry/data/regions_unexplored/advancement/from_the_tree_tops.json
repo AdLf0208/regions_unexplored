@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "kapok_vines": {
+      "conditions": {
+        "blocks": "regions_unexplored:kapok_vines_plant"
+      },
+      "trigger": "minecraft:enter_block"
+    }
+  },
+  "display": {
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
+    "description": {
+      "translate": "advancements.regions_unexplored.from_the_tree_tops.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "regions_unexplored:kapok_vines"
+    },
+    "title": {
+      "translate": "advancements.regions_unexplored.from_the_tree_tops.title"
+    }
+  },
+  "parent": "regions_unexplored:pioneer",
+  "requirements": [
+    [
+      "kapok_vines"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

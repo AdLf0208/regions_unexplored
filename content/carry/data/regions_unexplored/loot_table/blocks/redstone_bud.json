@@ -1,0 +1,40 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "children": [
+            {
+              "condition": "minecraft:tool/can_silk_touch",
+              "name": "regions_unexplored:redstone_bud",
+              "type": "minecraft:item"
+            },
+            {
+              "modifier": [
+                {
+                  "add": false,
+                  "count": {
+                    "max": 2.0,
+                    "min": 1.0,
+                    "type": "minecraft:uniform"
+                  },
+                  "type": "minecraft:set_count"
+                },
+                {
+                  "type": "minecraft:explosion_decay"
+                }
+              ],
+              "name": "minecraft:redstone",
+              "type": "minecraft:item"
+            }
+          ],
+          "type": "minecraft:alternatives"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "regions_unexplored:blocks/redstone_bud",
+  "type": "minecraft:block"
+}

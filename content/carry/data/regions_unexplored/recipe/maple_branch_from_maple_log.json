@@ -1,0 +1,16 @@
+{
+  "category": "misc",
+  "group": "branches",
+  "key": {
+    "#": "regions_unexplored:maple_log",
+    "X": "minecraft:stick"
+  },
+  "pattern": [
+    "#X"
+  ],
+  "result": {
+    "count": 2,
+    "id": "regions_unexplored:maple_branch"
+  },
+  "type": "minecraft:crafting_shaped"
+}

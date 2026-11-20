@@ -1,0 +1,21 @@
+{
+  "feature": "regions_unexplored:giant_yellow_bioshroom",
+  "placement": [
+    {
+      "count": 3,
+      "type": "minecraft:count_on_every_layer"
+    },
+    {
+      "predicate": {
+        "state": {
+          "id": "minecraft:crimson_roots"
+        },
+        "type": "minecraft:would_survive"
+      },
+      "type": "minecraft:block_predicate_filter"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

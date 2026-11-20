@@ -1,0 +1,22 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "condition": {
+        "predicate": {
+          "items": "#c:tools/shear"
+        },
+        "type": "minecraft:match_tool"
+      },
+      "entries": [
+        {
+          "name": "minecraft:air",
+          "type": "minecraft:item"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "regions_unexplored:blocks/kapok_vines_plant",
+  "type": "minecraft:block"
+}

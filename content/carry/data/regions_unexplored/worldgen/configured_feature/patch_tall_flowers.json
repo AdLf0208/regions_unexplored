@@ -1,0 +1,256 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": {
+          "config": {
+            "feature": {
+              "feature": {
+                "config": {
+                  "to_place": {
+                    "state": {
+                      "id": "regions_unexplored:tassel",
+                      "properties": {
+                        "half": "lower"
+                      }
+                    },
+                    "type": "minecraft:simple_state_provider"
+                  }
+                },
+                "type": "minecraft:simple_block"
+              },
+              "placement": [
+                {
+                  "predicate": {
+                    "blocks": "minecraft:air",
+                    "type": "minecraft:matching_blocks"
+                  },
+                  "type": "minecraft:block_predicate_filter"
+                }
+              ]
+            },
+            "tries": 96,
+            "xz_spread": 7,
+            "y_spread": 3
+          },
+          "type": "minecraft:random_patch"
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "config": {
+            "feature": {
+              "feature": {
+                "config": {
+                  "to_place": {
+                    "state": {
+                      "id": "regions_unexplored:day_lily",
+                      "properties": {
+                        "half": "lower"
+                      }
+                    },
+                    "type": "minecraft:simple_state_provider"
+                  }
+                },
+                "type": "minecraft:simple_block"
+              },
+              "placement": [
+                {
+                  "predicate": {
+                    "blocks": "minecraft:air",
+                    "type": "minecraft:matching_blocks"
+                  },
+                  "type": "minecraft:block_predicate_filter"
+                }
+              ]
+            },
+            "tries": 96,
+            "xz_spread": 7,
+            "y_spread": 3
+          },
+          "type": "minecraft:random_patch"
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "config": {
+            "feature": {
+              "feature": {
+                "config": {
+                  "to_place": {
+                    "state": {
+                      "id": "regions_unexplored:meadow_sage",
+                      "properties": {
+                        "half": "lower"
+                      }
+                    },
+                    "type": "minecraft:simple_state_provider"
+                  }
+                },
+                "type": "minecraft:simple_block"
+              },
+              "placement": [
+                {
+                  "predicate": {
+                    "blocks": "minecraft:air",
+                    "type": "minecraft:matching_blocks"
+                  },
+                  "type": "minecraft:block_predicate_filter"
+                }
+              ]
+            },
+            "tries": 96,
+            "xz_spread": 7,
+            "y_spread": 3
+          },
+          "type": "minecraft:random_patch"
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "config": {
+            "feature": {
+              "feature": {
+                "config": {
+                  "to_place": {
+                    "state": {
+                      "id": "minecraft:lilac",
+                      "properties": {
+                        "half": "lower"
+                      }
+                    },
+                    "type": "minecraft:simple_state_provider"
+                  }
+                },
+                "type": "minecraft:simple_block"
+              },
+              "placement": [
+                {
+                  "predicate": {
+                    "blocks": "minecraft:air",
+                    "type": "minecraft:matching_blocks"
+                  },
+                  "type": "minecraft:block_predicate_filter"
+                }
+              ]
+            },
+            "tries": 96,
+            "xz_spread": 7,
+            "y_spread": 3
+          },
+          "type": "minecraft:random_patch"
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "config": {
+            "feature": {
+              "feature": {
+                "config": {
+                  "to_place": {
+                    "state": {
+                      "id": "minecraft:rose_bush",
+                      "properties": {
+                        "half": "lower"
+                      }
+                    },
+                    "type": "minecraft:simple_state_provider"
+                  }
+                },
+                "type": "minecraft:simple_block"
+              },
+              "placement": [
+                {
+                  "predicate": {
+                    "blocks": "minecraft:air",
+                    "type": "minecraft:matching_blocks"
+                  },
+                  "type": "minecraft:block_predicate_filter"
+                }
+              ]
+            },
+            "tries": 96,
+            "xz_spread": 7,
+            "y_spread": 3
+          },
+          "type": "minecraft:random_patch"
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "config": {
+            "feature": {
+              "feature": {
+                "config": {
+                  "to_place": {
+                    "state": {
+                      "id": "minecraft:peony",
+                      "properties": {
+                        "half": "lower"
+                      }
+                    },
+                    "type": "minecraft:simple_state_provider"
+                  }
+                },
+                "type": "minecraft:simple_block"
+              },
+              "placement": [
+                {
+                  "predicate": {
+                    "blocks": "minecraft:air",
+                    "type": "minecraft:matching_blocks"
+                  },
+                  "type": "minecraft:block_predicate_filter"
+                }
+              ]
+            },
+            "tries": 96,
+            "xz_spread": 7,
+            "y_spread": 3
+          },
+          "type": "minecraft:random_patch"
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "config": {
+            "feature": {
+              "feature": {
+                "config": {
+                  "to_place": {
+                    "state": {
+                      "id": "minecraft:lily_of_the_valley"
+                    },
+                    "type": "minecraft:simple_state_provider"
+                  }
+                },
+                "type": "minecraft:simple_block"
+              },
+              "placement": [
+                {
+                  "predicate": {
+                    "blocks": "minecraft:air",
+                    "type": "minecraft:matching_blocks"
+                  },
+                  "type": "minecraft:block_predicate_filter"
+                }
+              ]
+            },
+            "tries": 96,
+            "xz_spread": 7,
+            "y_spread": 3
+          },
+          "type": "minecraft:no_bonemeal_flower"
+        },
+        "placement": []
+      }
+    ]
+  },
+  "type": "minecraft:simple_random_selector"
+}

@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "load_in_world": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "dimension": "minecraft:overworld"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
+    "description": {
+      "translate": "advancements.regions_unexplored.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "regions_unexplored:eucalyptus_sapling"
+    },
+    "title": {
+      "translate": "advancements.regions_unexplored.title"
+    }
+  },
+  "requirements": [
+    [
+      "load_in_world"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

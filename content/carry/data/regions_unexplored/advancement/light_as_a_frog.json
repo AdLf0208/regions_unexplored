@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "lily_pad": {
+      "conditions": {
+        "blocks": "regions_unexplored:giant_lily_pad"
+      },
+      "trigger": "minecraft:enter_block"
+    }
+  },
+  "display": {
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
+    "description": {
+      "translate": "advancements.regions_unexplored.light_as_a_frog.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "regions_unexplored:flowering_lily_pad"
+    },
+    "title": {
+      "translate": "advancements.regions_unexplored.light_as_a_frog.title"
+    }
+  },
+  "parent": "regions_unexplored:pioneer",
+  "requirements": [
+    [
+      "lily_pad"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

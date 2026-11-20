@@ -1,0 +1,16 @@
+{
+  "category": "misc",
+  "group": "shrubs",
+  "key": {
+    "#": "regions_unexplored:pine_sapling"
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:pine_shrub"
+  },
+  "type": "minecraft:crafting_shaped"
+}

@@ -1,0 +1,17 @@
+{
+  "category": "building",
+  "group": "coarse_dirt",
+  "key": {
+    "D": "regions_unexplored:peat_dirt",
+    "G": "minecraft:gravel"
+  },
+  "pattern": [
+    "DG",
+    "GD"
+  ],
+  "result": {
+    "count": 4,
+    "id": "regions_unexplored:peat_coarse_dirt"
+  },
+  "type": "minecraft:crafting_shaped"
+}

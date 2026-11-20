@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "magenta_dye",
+  "ingredients": [
+    "regions_unexplored:magenta_snowbelle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:magenta_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

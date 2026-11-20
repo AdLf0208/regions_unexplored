@@ -1,0 +1,37 @@
+{
+  "config": {
+    "foliage_provider": {
+      "state": {
+        "id": "regions_unexplored:pine_leaves",
+        "properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "has_leaves": false,
+    "minimum_size": 5,
+    "size_variation": 6,
+    "stump_provider": {
+      "state": {
+        "id": "regions_unexplored:stripped_pine_log",
+        "properties": {
+          "axis": "y"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "trunk_provider": {
+      "state": {
+        "id": "regions_unexplored:stripped_pine_log",
+        "properties": {
+          "axis": "y"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "regions_unexplored:fallen_snow_tree"
+}

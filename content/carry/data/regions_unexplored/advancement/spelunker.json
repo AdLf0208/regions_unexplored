@@ -1,0 +1,106 @@
+{
+  "criteria": {
+    "ancient_delta": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:ancient_delta"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "bioshroom_caves": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:bioshroom_caves"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "prismachasm": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:prismachasm"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "redstone_caves": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:redstone_caves"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "scorching_caves": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:scorching_caves"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
+    "description": {
+      "translate": "advancements.regions_unexplored.spelunker.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "regions_unexplored:dropleaf"
+    },
+    "title": {
+      "translate": "advancements.regions_unexplored.spelunker.title"
+    }
+  },
+  "parent": "regions_unexplored:parent",
+  "requirements": [
+    [
+      "bioshroom_caves"
+    ],
+    [
+      "ancient_delta"
+    ],
+    [
+      "prismachasm"
+    ],
+    [
+      "redstone_caves"
+    ],
+    [
+      "scorching_caves"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

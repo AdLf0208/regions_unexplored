@@ -1,0 +1,16 @@
+{
+  "category": "misc",
+  "group": "branches",
+  "key": {
+    "#": "minecraft:spruce_log",
+    "X": "minecraft:stick"
+  },
+  "pattern": [
+    "#X"
+  ],
+  "result": {
+    "count": 2,
+    "id": "regions_unexplored:spruce_branch"
+  },
+  "type": "minecraft:crafting_shaped"
+}

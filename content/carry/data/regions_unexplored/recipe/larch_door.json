@@ -1,0 +1,17 @@
+{
+  "category": "redstone",
+  "group": "wooden_door",
+  "key": {
+    "#": "regions_unexplored:larch_planks"
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "regions_unexplored:larch_door"
+  },
+  "type": "minecraft:crafting_shaped"
+}

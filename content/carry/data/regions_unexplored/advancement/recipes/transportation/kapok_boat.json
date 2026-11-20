@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "regions_unexplored:kapok_boat"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "in_water": {
+      "conditions": {
+        "blocks": "minecraft:water"
+      },
+      "trigger": "minecraft:enter_block"
+    }
+  },
+  "parent": "minecraft:recipes/root",
+  "requirements": [
+    [
+      "has_the_recipe",
+      "in_water"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "regions_unexplored:kapok_boat"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "category": "building",
+  "group": "bark",
+  "key": {
+    "#": "regions_unexplored:joshua_log"
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "regions_unexplored:joshua_wood"
+  },
+  "type": "minecraft:crafting_shaped"
+}

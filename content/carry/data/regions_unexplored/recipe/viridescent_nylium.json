@@ -1,0 +1,17 @@
+{
+  "category": "building",
+  "group": "viridescent_nylium",
+  "key": {
+    "#": "minecraft:stone",
+    "X": "#c:mushrooms"
+  },
+  "pattern": [
+    "X",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:viridescent_nylium"
+  },
+  "type": "minecraft:crafting_shaped"
+}

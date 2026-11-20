@@ -1,0 +1,29 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "children": [
+            {
+              "condition": "minecraft:tool/can_silk_touch",
+              "name": "regions_unexplored:glistering_nylium",
+              "type": "minecraft:item"
+            },
+            {
+              "condition": {
+                "type": "minecraft:survives_explosion"
+              },
+              "name": "minecraft:netherrack",
+              "type": "minecraft:item"
+            }
+          ],
+          "type": "minecraft:alternatives"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "regions_unexplored:blocks/glistering_nylium",
+  "type": "minecraft:block"
+}

@@ -1,0 +1,11 @@
+{
+  "template": "minecraft:oak_log",
+  "state_properties": {
+    "is_base": {
+      "type": "boolean"
+    }
+  },
+  "default_state": {
+    "is_base": "false"
+  }
+}

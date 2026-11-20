@@ -1,0 +1,16 @@
+{
+  "category": "misc",
+  "group": "shrubs",
+  "key": {
+    "#": "minecraft:jungle_sapling"
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:jungle_shrub"
+  },
+  "type": "minecraft:crafting_shaped"
+}

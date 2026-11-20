@@ -1,0 +1,6 @@
+{
+  "template": "minecraft:glow_lichen",
+  "properties": {
+    "random_ticks": false
+  }
+}

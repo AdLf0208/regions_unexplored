@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "purple_dye",
+  "ingredients": [
+    "regions_unexplored:purple_coneflower"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:purple_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

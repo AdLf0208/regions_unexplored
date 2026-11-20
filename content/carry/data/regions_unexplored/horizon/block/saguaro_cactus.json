@@ -1,0 +1,20 @@
+{
+  "template": "minecraft:stone",
+  "state_properties": {
+    "cactus_shape": {
+      "type": "enum",
+      "values": [
+        "east_up",
+        "east_west",
+        "north_south",
+        "north_up",
+        "south_up",
+        "up_down",
+        "west_up"
+      ]
+    }
+  },
+  "default_state": {
+    "cactus_shape": "up_down"
+  }
+}

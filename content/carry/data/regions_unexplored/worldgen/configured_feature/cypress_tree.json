@@ -1,0 +1,36 @@
+{
+  "config": {
+    "branch_provider": {
+      "state": {
+        "id": "regions_unexplored:cypress_branch",
+        "properties": {
+          "facing": "north"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "foliage_provider": {
+      "state": {
+        "id": "regions_unexplored:cypress_leaves",
+        "properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "minimum_size": 17,
+    "size_variation": 4,
+    "trunk_provider": {
+      "state": {
+        "id": "regions_unexplored:cypress_log",
+        "properties": {
+          "axis": "y"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "regions_unexplored:cypress_tree"
+}

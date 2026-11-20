@@ -1,0 +1,21 @@
+{
+  "feature": "regions_unexplored:patch_brim_flames",
+  "placement": [
+    {
+      "count": 5,
+      "type": "minecraft:count_on_every_layer"
+    },
+    {
+      "predicate": {
+        "state": {
+          "id": "regions_unexplored:brimsprout"
+        },
+        "type": "minecraft:would_survive"
+      },
+      "type": "minecraft:block_predicate_filter"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

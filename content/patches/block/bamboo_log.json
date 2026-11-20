@@ -1,0 +1,11 @@
+{
+  "template": "minecraft:bamboo_block",
+  "state_properties": {
+    "leaves": {
+      "type": "boolean"
+    }
+  },
+  "default_state": {
+    "leaves": "true"
+  }
+}

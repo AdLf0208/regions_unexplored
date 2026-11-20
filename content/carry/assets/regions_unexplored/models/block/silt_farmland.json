@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/template_cube_bottom_top_indented",
+  "textures": {
+    "bottom": "regions_unexplored:block/silt_dirt",
+    "side": "regions_unexplored:block/silt_dirt",
+    "top": "regions_unexplored:block/silt_farmland"
+  }
+}

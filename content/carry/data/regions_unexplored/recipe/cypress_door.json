@@ -1,0 +1,17 @@
+{
+  "category": "redstone",
+  "group": "wooden_door",
+  "key": {
+    "#": "regions_unexplored:cypress_planks"
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "regions_unexplored:cypress_door"
+  },
+  "type": "minecraft:crafting_shaped"
+}

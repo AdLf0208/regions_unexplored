@@ -1,0 +1,94 @@
+{
+  "config": {
+    "feature": {
+      "feature": {
+        "config": {
+          "to_place": {
+            "entries": [
+              {
+                "data": {
+                  "id": "minecraft:pumpkin"
+                },
+                "weight": 4
+              },
+              {
+                "data": {
+                  "id": "minecraft:carved_pumpkin",
+                  "properties": {
+                    "facing": "north"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "id": "minecraft:carved_pumpkin",
+                  "properties": {
+                    "facing": "south"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "id": "minecraft:carved_pumpkin",
+                  "properties": {
+                    "facing": "east"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "id": "minecraft:carved_pumpkin",
+                  "properties": {
+                    "facing": "west"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "id": "minecraft:air"
+                },
+                "weight": 75
+              }
+            ],
+            "type": "minecraft:weighted_state_provider"
+          }
+        },
+        "type": "minecraft:simple_block"
+      },
+      "placement": [
+        {
+          "predicate": {
+            "predicates": [
+              {
+                "blocks": "minecraft:air",
+                "type": "minecraft:matching_blocks"
+              },
+              {
+                "blocks": [
+                  "regions_unexplored:silt_podzol",
+                  "minecraft:snow_block"
+                ],
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ],
+                "type": "minecraft:matching_blocks"
+              }
+            ],
+            "type": "minecraft:all_of"
+          },
+          "type": "minecraft:block_predicate_filter"
+        }
+      ]
+    },
+    "tries": 125,
+    "xz_spread": 7,
+    "y_spread": 3
+  },
+  "type": "minecraft:random_patch"
+}

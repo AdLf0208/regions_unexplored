@@ -1,0 +1,17 @@
+{
+  "category": "building",
+  "group": "wooden_stairs",
+  "key": {
+    "#": "regions_unexplored:baobab_planks"
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "regions_unexplored:baobab_stairs"
+  },
+  "type": "minecraft:crafting_shaped"
+}

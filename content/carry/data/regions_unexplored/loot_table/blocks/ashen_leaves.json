@@ -1,0 +1,149 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "children": [
+            {
+              "condition": {
+                "terms": [
+                  {
+                    "predicate": {
+                      "items": "#c:tools/shear"
+                    },
+                    "type": "minecraft:match_tool"
+                  },
+                  "minecraft:tool/can_silk_touch"
+                ],
+                "type": "minecraft:any_of"
+              },
+              "name": "regions_unexplored:ashen_leaves",
+              "type": "minecraft:item"
+            },
+            {
+              "condition": {
+                "terms": [
+                  {
+                    "type": "minecraft:survives_explosion"
+                  },
+                  {
+                    "chances": [
+                      0.05,
+                      0.0625,
+                      0.083333336,
+                      0.1
+                    ],
+                    "enchantment": "minecraft:fortune",
+                    "type": "minecraft:table_bonus"
+                  }
+                ],
+                "type": "minecraft:all_of"
+              },
+              "name": "regions_unexplored:ashen_sapling",
+              "type": "minecraft:item"
+            }
+          ],
+          "type": "minecraft:alternatives"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "condition": {
+        "term": {
+          "terms": [
+            {
+              "predicate": {
+                "items": "#c:tools/shear"
+              },
+              "type": "minecraft:match_tool"
+            },
+            "minecraft:tool/can_silk_touch"
+          ],
+          "type": "minecraft:any_of"
+        },
+        "type": "minecraft:inverted"
+      },
+      "entries": [
+        {
+          "condition": {
+            "chances": [
+              0.02,
+              0.022222223,
+              0.025,
+              0.033333335,
+              0.1
+            ],
+            "enchantment": "minecraft:fortune",
+            "type": "minecraft:table_bonus"
+          },
+          "modifier": [
+            {
+              "add": false,
+              "count": {
+                "max": 2.0,
+                "min": 1.0,
+                "type": "minecraft:uniform"
+              },
+              "type": "minecraft:set_count"
+            },
+            {
+              "type": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "minecraft:stick",
+          "type": "minecraft:item"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "condition": {
+        "term": {
+          "terms": [
+            {
+              "predicate": {
+                "items": "#c:tools/shear"
+              },
+              "type": "minecraft:match_tool"
+            },
+            "minecraft:tool/can_silk_touch"
+          ],
+          "type": "minecraft:any_of"
+        },
+        "type": "minecraft:inverted"
+      },
+      "entries": [
+        {
+          "condition": {
+            "terms": [
+              {
+                "type": "minecraft:survives_explosion"
+              },
+              {
+                "chances": [
+                  0.005,
+                  0.0055555557,
+                  0.00625,
+                  0.008333334,
+                  0.025
+                ],
+                "enchantment": "minecraft:fortune",
+                "type": "minecraft:table_bonus"
+              }
+            ],
+            "type": "minecraft:all_of"
+          },
+          "name": "minecraft:apple",
+          "type": "minecraft:item"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "regions_unexplored:blocks/ashen_leaves",
+  "type": "minecraft:block"
+}

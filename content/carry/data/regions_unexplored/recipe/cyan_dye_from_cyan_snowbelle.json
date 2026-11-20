@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "cyan_dye",
+  "ingredients": [
+    "regions_unexplored:cyan_snowbelle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:cyan_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

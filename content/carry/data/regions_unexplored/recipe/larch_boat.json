@@ -1,0 +1,16 @@
+{
+  "category": "misc",
+  "group": "boat",
+  "key": {
+    "#": "regions_unexplored:larch_planks"
+  },
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:larch_boat"
+  },
+  "type": "minecraft:crafting_shaped"
+}

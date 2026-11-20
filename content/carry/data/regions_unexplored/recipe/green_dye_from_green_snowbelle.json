@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "green_dye",
+  "ingredients": [
+    "regions_unexplored:green_snowbelle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:green_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

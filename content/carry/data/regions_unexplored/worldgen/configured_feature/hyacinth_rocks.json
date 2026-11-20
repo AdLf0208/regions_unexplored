@@ -1,0 +1,11 @@
+{
+  "config": {
+    "alt_state": {
+      "id": "regions_unexplored:mossy_stone"
+    },
+    "state": {
+      "id": "minecraft:stone"
+    }
+  },
+  "type": "regions_unexplored:ocean_rock"
+}

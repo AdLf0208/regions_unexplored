@@ -1,0 +1,25 @@
+{
+  "config": {
+    "branch_provider": {
+      "state": {
+        "id": "minecraft:blue_ice"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "foliage_provider": {
+      "state": {
+        "id": "minecraft:ice"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "minimum_size": 14,
+    "size_variation": 9,
+    "trunk_provider": {
+      "state": {
+        "id": "minecraft:packed_ice"
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "regions_unexplored:spire"
+}

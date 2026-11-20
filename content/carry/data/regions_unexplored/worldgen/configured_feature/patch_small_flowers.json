@@ -1,0 +1,115 @@
+{
+  "config": {
+    "feature": {
+      "feature": {
+        "config": {
+          "to_place": {
+            "noise": {
+              "amplitudes": [
+                1.0
+              ],
+              "firstOctave": 0
+            },
+            "scale": 0.075,
+            "seed": 2345,
+            "states": [
+              {
+                "id": "regions_unexplored:mallow"
+              },
+              {
+                "id": "regions_unexplored:yellow_lupine"
+              },
+              {
+                "id": "minecraft:pink_tulip"
+              },
+              {
+                "id": "regions_unexplored:poppy_bush"
+              },
+              {
+                "id": "minecraft:oxeye_daisy"
+              },
+              {
+                "id": "regions_unexplored:red_lupine"
+              },
+              {
+                "id": "minecraft:cornflower"
+              },
+              {
+                "id": "regions_unexplored:pink_lupine"
+              },
+              {
+                "id": "regions_unexplored:tsubaki"
+              },
+              {
+                "id": "minecraft:orange_tulip"
+              },
+              {
+                "id": "regions_unexplored:waratah"
+              },
+              {
+                "id": "minecraft:white_tulip"
+              },
+              {
+                "id": "regions_unexplored:hyssop"
+              },
+              {
+                "id": "minecraft:allium"
+              },
+              {
+                "id": "regions_unexplored:blue_lupine"
+              },
+              {
+                "id": "regions_unexplored:bleeding_heart"
+              },
+              {
+                "id": "regions_unexplored:salmon_poppy_bush"
+              },
+              {
+                "id": "regions_unexplored:white_trillium"
+              },
+              {
+                "id": "minecraft:blue_orchid"
+              },
+              {
+                "id": "regions_unexplored:fireweed"
+              },
+              {
+                "id": "regions_unexplored:daisy"
+              },
+              {
+                "id": "regions_unexplored:purple_lupine"
+              },
+              {
+                "id": "minecraft:red_tulip"
+              },
+              {
+                "id": "regions_unexplored:felicia_daisy"
+              },
+              {
+                "id": "minecraft:poppy"
+              },
+              {
+                "id": "minecraft:lily_of_the_valley"
+              }
+            ],
+            "type": "minecraft:noise_provider"
+          }
+        },
+        "type": "minecraft:simple_block"
+      },
+      "placement": [
+        {
+          "predicate": {
+            "blocks": "minecraft:air",
+            "type": "minecraft:matching_blocks"
+          },
+          "type": "minecraft:block_predicate_filter"
+        }
+      ]
+    },
+    "tries": 96,
+    "xz_spread": 6,
+    "y_spread": 2
+  },
+  "type": "minecraft:flower"
+}

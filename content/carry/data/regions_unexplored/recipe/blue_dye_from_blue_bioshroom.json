@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "blue_dye",
+  "ingredients": [
+    "regions_unexplored:blue_bioshroom"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:blue_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

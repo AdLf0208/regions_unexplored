@@ -1,0 +1,15 @@
+{
+  "category": "building",
+  "group": "blackstone",
+  "key": {
+    "#": "regions_unexplored:blackstone_cluster"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:blackstone"
+  },
+  "type": "minecraft:crafting_shaped"
+}

@@ -1,0 +1,15 @@
+{
+  "template": "minecraft:poppy",
+  "state_properties": {
+    "stage": {
+      "type": "enum",
+      "values": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  "default_state": {
+    "stage": "0"
+  }
+}

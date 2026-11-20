@@ -1,0 +1,12 @@
+{
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    "#regions_unexplored:blackwood_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "regions_unexplored:blackwood_planks"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

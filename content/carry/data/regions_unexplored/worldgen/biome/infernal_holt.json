@@ -1,0 +1,133 @@
+{
+  "attributes": {
+    "minecraft:audio/ambient_sounds": {
+      "additions": {
+        "sound": "minecraft:ambient.soul_sand_valley.additions",
+        "tick_chance": 0.0111
+      },
+      "loop": "minecraft:ambient.basalt_deltas.loop",
+      "mood": {
+        "block_search_extent": 8,
+        "offset": 2.0,
+        "sound": "minecraft:ambient.warped_forest.mood",
+        "tick_delay": 6000
+      }
+    },
+    "minecraft:audio/background_music": {
+      "default": {
+        "max_delay": 24000,
+        "min_delay": 12000,
+        "sound": "minecraft:music.nether.basalt_deltas"
+      }
+    },
+    "minecraft:gameplay/natural_mob_spawns": {
+      "argument": {
+        "spawn_costs": {},
+        "spawns_by_category": {
+          "ambient": [],
+          "axolotls": [],
+          "creature": [
+            {
+              "count": {
+                "max_inclusive": 2,
+                "min_inclusive": 1,
+                "type": "minecraft:uniform"
+              },
+              "type": "minecraft:strider",
+              "weight": 60
+            }
+          ],
+          "misc": [],
+          "monster": [
+            {
+              "count": {
+                "max_inclusive": 4,
+                "min_inclusive": 2,
+                "type": "minecraft:uniform"
+              },
+              "type": "minecraft:zombified_piglin",
+              "weight": 1
+            },
+            {
+              "count": {
+                "max_inclusive": 4,
+                "min_inclusive": 3,
+                "type": "minecraft:uniform"
+              },
+              "type": "minecraft:hoglin",
+              "weight": 9
+            },
+            {
+              "count": {
+                "max_inclusive": 4,
+                "min_inclusive": 3,
+                "type": "minecraft:uniform"
+              },
+              "type": "minecraft:piglin",
+              "weight": 5
+            }
+          ],
+          "underground_water_creature": [],
+          "water_ambient": [],
+          "water_creature": []
+        }
+      },
+      "modifier": "overlay"
+    },
+    "minecraft:visual/ambient_particles": {
+      "argument": [
+        {
+          "particle": {
+            "type": "minecraft:white_ash"
+          },
+          "probability": 0.03
+        }
+      ],
+      "modifier": "append"
+    },
+    "minecraft:visual/fog_color": "#35180d",
+    "minecraft:visual/sky_color": "#35180d",
+    "minecraft:visual/water_fog_color": "#35180d"
+  },
+  "carvers": [
+    "minecraft:nether_cave"
+  ],
+  "downfall": 0.0,
+  "effects": {
+    "foliage_color": "#6f5349",
+    "grass_color": "#6f5349",
+    "water_color": "#35180d"
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:spring_open",
+      "minecraft:patch_fire",
+      "minecraft:glowstone",
+      "minecraft:brown_mushroom_nether",
+      "minecraft:red_mushroom_nether",
+      "minecraft:ore_magma",
+      "minecraft:spring_closed",
+      "minecraft:ore_gravel_nether",
+      "minecraft:ore_blackstone",
+      "minecraft:ore_gold_nether",
+      "minecraft:ore_quartz_nether",
+      "minecraft:ore_ancient_debris_large",
+      "minecraft:ore_debris_small",
+      "regions_unexplored:brim_willow_tree",
+      "regions_unexplored:tall_brim_willow_tree",
+      "regions_unexplored:brimsprout",
+      "regions_unexplored:dorcel",
+      "regions_unexplored:brim_flames",
+      "regions_unexplored:brimwood_shrub"
+    ]
+  ],
+  "has_precipitation": false,
+  "temperature": 2.0
+}

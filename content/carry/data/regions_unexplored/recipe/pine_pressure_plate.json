@@ -1,0 +1,15 @@
+{
+  "category": "redstone",
+  "group": "wooden_pressure_plate",
+  "key": {
+    "#": "regions_unexplored:pine_planks"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:pine_pressure_plate"
+  },
+  "type": "minecraft:crafting_shaped"
+}

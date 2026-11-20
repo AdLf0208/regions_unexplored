@@ -1,0 +1,30 @@
+{
+  "config": {
+    "spread_height": 1,
+    "spread_width": 3,
+    "state_provider": {
+      "entries": [
+        {
+          "data": {
+            "id": "regions_unexplored:glistering_sprout"
+          },
+          "weight": 140
+        },
+        {
+          "data": {
+            "id": "regions_unexplored:glistering_bloom"
+          },
+          "weight": 30
+        },
+        {
+          "data": {
+            "id": "regions_unexplored:glistering_bloom"
+          },
+          "weight": 10
+        }
+      ],
+      "type": "minecraft:weighted_state_provider"
+    }
+  },
+  "type": "minecraft:nether_forest_vegetation"
+}

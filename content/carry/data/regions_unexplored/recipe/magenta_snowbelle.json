@@ -1,0 +1,13 @@
+{
+  "category": "building",
+  "group": "snowbelle",
+  "ingredients": [
+    "#c:magenta_dyes",
+    "#regions_unexplored:snowbelle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:magenta_snowbelle"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

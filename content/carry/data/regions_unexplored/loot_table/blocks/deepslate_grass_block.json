@@ -1,0 +1,29 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "children": [
+            {
+              "condition": "minecraft:tool/can_silk_touch",
+              "name": "regions_unexplored:deepslate_grass_block",
+              "type": "minecraft:item"
+            },
+            {
+              "condition": {
+                "type": "minecraft:survives_explosion"
+              },
+              "name": "minecraft:cobbled_deepslate",
+              "type": "minecraft:item"
+            }
+          ],
+          "type": "minecraft:alternatives"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "regions_unexplored:blocks/deepslate_grass_block",
+  "type": "minecraft:block"
+}

@@ -1,0 +1,46 @@
+{
+  "config": {
+    "sapling_provider": {
+      "entries": [
+        {
+          "data": {
+            "id": "regions_unexplored:maple_shrub",
+            "properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 2
+        },
+        {
+          "data": {
+            "id": "regions_unexplored:silver_birch_shrub",
+            "properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 4
+        },
+        {
+          "data": {
+            "id": "regions_unexplored:red_maple_shrub",
+            "properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 4
+        },
+        {
+          "data": {
+            "id": "regions_unexplored:orange_maple_shrub",
+            "properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 4
+        }
+      ],
+      "type": "minecraft:weighted_state_provider"
+    }
+  },
+  "type": "regions_unexplored:shrub"
+}

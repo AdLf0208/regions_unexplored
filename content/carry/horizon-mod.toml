@@ -1,0 +1,8 @@
+# Carried over from regions_unexplored-neoforge-1.21.1-0.5.9.jar by horizon-port-pack, for local use only.
+# Licence: MIT
+id = "regions_unexplored"
+name = "Regions Unexplored"
+version = "0.5.9"
+api = "0.2"
+side = "both"
+capabilities = ["registries"]

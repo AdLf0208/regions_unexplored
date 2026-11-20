@@ -1,0 +1,14 @@
+{
+  "config": {
+    "to_place": {
+      "state": {
+        "id": "regions_unexplored:tassel",
+        "properties": {
+          "half": "lower"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "minecraft:simple_block"
+}

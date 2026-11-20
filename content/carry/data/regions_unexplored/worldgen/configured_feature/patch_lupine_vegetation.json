@@ -1,0 +1,59 @@
+{
+  "config": {
+    "feature": {
+      "feature": {
+        "config": {
+          "to_place": {
+            "entries": [
+              {
+                "data": {
+                  "id": "regions_unexplored:yellow_lupine"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "id": "regions_unexplored:red_lupine"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "id": "regions_unexplored:blue_lupine"
+                },
+                "weight": 10
+              },
+              {
+                "data": {
+                  "id": "regions_unexplored:pink_lupine"
+                },
+                "weight": 10
+              },
+              {
+                "data": {
+                  "id": "regions_unexplored:purple_lupine"
+                },
+                "weight": 10
+              }
+            ],
+            "type": "minecraft:weighted_state_provider"
+          }
+        },
+        "type": "minecraft:simple_block"
+      },
+      "placement": [
+        {
+          "predicate": {
+            "blocks": "minecraft:air",
+            "type": "minecraft:matching_blocks"
+          },
+          "type": "minecraft:block_predicate_filter"
+        }
+      ]
+    },
+    "tries": 96,
+    "xz_spread": 6,
+    "y_spread": 2
+  },
+  "type": "minecraft:flower"
+}

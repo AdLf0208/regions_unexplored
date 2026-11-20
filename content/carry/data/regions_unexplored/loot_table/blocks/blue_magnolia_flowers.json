@@ -1,0 +1,104 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "condition": {
+            "predicate": {
+              "items": "#c:tools/shear"
+            },
+            "type": "minecraft:match_tool"
+          },
+          "modifier": [
+            {
+              "add": true,
+              "condition": {
+                "block": "regions_unexplored:blue_magnolia_flowers",
+                "properties": {
+                  "down": "true"
+                },
+                "type": "minecraft:block_state_property"
+              },
+              "count": 1.0,
+              "type": "minecraft:set_count"
+            },
+            {
+              "add": true,
+              "condition": {
+                "block": "regions_unexplored:blue_magnolia_flowers",
+                "properties": {
+                  "up": "true"
+                },
+                "type": "minecraft:block_state_property"
+              },
+              "count": 1.0,
+              "type": "minecraft:set_count"
+            },
+            {
+              "add": true,
+              "condition": {
+                "block": "regions_unexplored:blue_magnolia_flowers",
+                "properties": {
+                  "north": "true"
+                },
+                "type": "minecraft:block_state_property"
+              },
+              "count": 1.0,
+              "type": "minecraft:set_count"
+            },
+            {
+              "add": true,
+              "condition": {
+                "block": "regions_unexplored:blue_magnolia_flowers",
+                "properties": {
+                  "south": "true"
+                },
+                "type": "minecraft:block_state_property"
+              },
+              "count": 1.0,
+              "type": "minecraft:set_count"
+            },
+            {
+              "add": true,
+              "condition": {
+                "block": "regions_unexplored:blue_magnolia_flowers",
+                "properties": {
+                  "west": "true"
+                },
+                "type": "minecraft:block_state_property"
+              },
+              "count": 1.0,
+              "type": "minecraft:set_count"
+            },
+            {
+              "add": true,
+              "condition": {
+                "block": "regions_unexplored:blue_magnolia_flowers",
+                "properties": {
+                  "east": "true"
+                },
+                "type": "minecraft:block_state_property"
+              },
+              "count": 1.0,
+              "type": "minecraft:set_count"
+            },
+            {
+              "add": true,
+              "count": -1.0,
+              "type": "minecraft:set_count"
+            },
+            {
+              "type": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "regions_unexplored:blue_magnolia_flowers",
+          "type": "minecraft:item"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "regions_unexplored:blocks/blue_magnolia_flowers",
+  "type": "minecraft:block"
+}

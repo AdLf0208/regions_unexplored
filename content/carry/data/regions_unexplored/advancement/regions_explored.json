@@ -1,0 +1,1230 @@
+{
+  "criteria": {
+    "alpha_grove": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:alpha_grove"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "ancient_delta": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:ancient_delta"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "arid_mountains": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:arid_mountains"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "ashen_woodland": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:ashen_woodland"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "autumnal_maple_forest": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:autumnal_maple_forest"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "bamboo_forest": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:bamboo_forest"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "baobab_savanna": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:baobab_savanna"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "barley_fields": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:barley_fields"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "bayou": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:bayou"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "bioshroom_caves": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:bioshroom_caves"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "blackstone_basin": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:blackstone_basin"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "blackwood_taiga": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:blackwood_taiga"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "boreal_forest": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:boreal_taiga"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "chalk_cliffs": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:chalk_cliffs"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "cold_boreal_taiga": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:cold_boreal_taiga"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "cold_deciduous_forest": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:cold_deciduous_forest"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "cold_river": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:cold_river"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "deciduous_forest": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:deciduous_forest"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "dry_bushland": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:dry_bushland"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "eucalyptus_forest": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:eucalyptus_forest"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "fen": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:fen"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "flower_fields": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:flower_fields"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "frozen_pine_taiga": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:frozen_pine_taiga"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "frozen_tundra": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:frozen_tundra"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "fungal_fen": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:fungal_fen"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "glistering_meadow": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:glistering_meadow"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "golden_boreal_taiga": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:golden_boreal_taiga"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "grassland": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:grassland"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "grassy_beach": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:grassy_beach"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "gravel_beach": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:gravel_beach"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "highland_fields": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:highland_fields"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "hyacinth_deeps": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:hyacinth_deeps"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "icy_heights": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:icy_heights"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "infernal_holt": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:infernal_holt"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "joshua_desert": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:joshua_desert"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "lupine_plains": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:clover_plains"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "magnolia_highlands": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:magnolia_woodland"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "maple_forest": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:maple_forest"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "marsh": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:marsh"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "mauve_hills": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:mauve_hills"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "mountains": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:mountains"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "muddy_river": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:muddy_river"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "mycotoxic_undergrowth": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:mycotoxic_undergrowth"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "ochard": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:orchard"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "old_growth_bayou": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:old_growth_bayou"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "outback": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:outback"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "pine_slopes": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:pine_slopes"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "pine_taiga": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:pine_taiga"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "poppy_fields": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:poppy_fields"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "prairie": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:prairie"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "prismachasm": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:prismachasm"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "pumpkin_fields": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:pumpkin_fields"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "rainforest": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:rainforest"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "redstone_abyss": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:redstone_abyss"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "redstone_caves": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:redstone_caves"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "redwoods": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:redwoods"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "rocky_meadow": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:rocky_meadow"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "rocky_reef": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:rocky_reef"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "saguaro_desert": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:saguaro_desert"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "scorching_caves": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:scorching_caves"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "shrubland": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:shrubland"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "silver_birch_forest": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:silver_birch_forest"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "sparse_rainforest": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:sparse_rainforest"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "sparse_redwoods": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:sparse_redwoods"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "spires": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:spires"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "steppe": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:steppe"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "temperate_grove": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:temperate_grove"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "towering_cliffs": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:towering_cliffs"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "tropical_river": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:tropical_river"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "tropics": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:tropics"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "willow_forest": {
+      "conditions": {
+        "player": {
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "regions_unexplored:willow_forest"
+            }
+          },
+          "type": "minecraft:entity_properties"
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
+    "description": {
+      "translate": "advancements.regions_unexplored.regions_explored.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "minecraft:leather_boots"
+    },
+    "title": {
+      "translate": "advancements.regions_unexplored.regions_explored.title"
+    }
+  },
+  "parent": "regions_unexplored:pioneer",
+  "requirements": [
+    [
+      "alpha_grove"
+    ],
+    [
+      "ancient_delta"
+    ],
+    [
+      "arid_mountains"
+    ],
+    [
+      "ashen_woodland"
+    ],
+    [
+      "autumnal_maple_forest"
+    ],
+    [
+      "bayou"
+    ],
+    [
+      "bamboo_forest"
+    ],
+    [
+      "baobab_savanna"
+    ],
+    [
+      "barley_fields"
+    ],
+    [
+      "bioshroom_caves"
+    ],
+    [
+      "blackstone_basin"
+    ],
+    [
+      "blackwood_taiga"
+    ],
+    [
+      "boreal_forest"
+    ],
+    [
+      "chalk_cliffs"
+    ],
+    [
+      "cold_boreal_taiga"
+    ],
+    [
+      "cold_deciduous_forest"
+    ],
+    [
+      "cold_river"
+    ],
+    [
+      "deciduous_forest"
+    ],
+    [
+      "dry_bushland"
+    ],
+    [
+      "eucalyptus_forest"
+    ],
+    [
+      "fen"
+    ],
+    [
+      "flower_fields"
+    ],
+    [
+      "frozen_pine_taiga"
+    ],
+    [
+      "frozen_tundra"
+    ],
+    [
+      "fungal_fen"
+    ],
+    [
+      "glistering_meadow"
+    ],
+    [
+      "golden_boreal_taiga"
+    ],
+    [
+      "grassland"
+    ],
+    [
+      "grassy_beach"
+    ],
+    [
+      "gravel_beach"
+    ],
+    [
+      "highland_fields"
+    ],
+    [
+      "hyacinth_deeps"
+    ],
+    [
+      "icy_heights"
+    ],
+    [
+      "infernal_holt"
+    ],
+    [
+      "joshua_desert"
+    ],
+    [
+      "lupine_plains"
+    ],
+    [
+      "magnolia_highlands"
+    ],
+    [
+      "maple_forest"
+    ],
+    [
+      "marsh"
+    ],
+    [
+      "mauve_hills"
+    ],
+    [
+      "mountains"
+    ],
+    [
+      "muddy_river"
+    ],
+    [
+      "mycotoxic_undergrowth"
+    ],
+    [
+      "old_growth_bayou"
+    ],
+    [
+      "ochard"
+    ],
+    [
+      "outback"
+    ],
+    [
+      "pine_slopes"
+    ],
+    [
+      "pine_taiga"
+    ],
+    [
+      "poppy_fields"
+    ],
+    [
+      "prairie"
+    ],
+    [
+      "prismachasm"
+    ],
+    [
+      "pumpkin_fields"
+    ],
+    [
+      "rainforest"
+    ],
+    [
+      "redstone_abyss"
+    ],
+    [
+      "redstone_caves"
+    ],
+    [
+      "redwoods"
+    ],
+    [
+      "rocky_meadow"
+    ],
+    [
+      "rocky_reef"
+    ],
+    [
+      "saguaro_desert"
+    ],
+    [
+      "scorching_caves"
+    ],
+    [
+      "shrubland"
+    ],
+    [
+      "silver_birch_forest"
+    ],
+    [
+      "sparse_rainforest"
+    ],
+    [
+      "sparse_redwoods"
+    ],
+    [
+      "spires"
+    ],
+    [
+      "steppe"
+    ],
+    [
+      "temperate_grove"
+    ],
+    [
+      "towering_cliffs"
+    ],
+    [
+      "tropical_river"
+    ],
+    [
+      "tropics"
+    ],
+    [
+      "willow_forest"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

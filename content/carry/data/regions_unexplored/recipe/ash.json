@@ -1,0 +1,16 @@
+{
+  "category": "building",
+  "group": "ash",
+  "key": {
+    "#": "minecraft:gunpowder"
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:ash"
+  },
+  "type": "minecraft:crafting_shaped"
+}

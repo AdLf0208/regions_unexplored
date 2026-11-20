@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "white_dye",
+  "ingredients": [
+    "regions_unexplored:white_trillium"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:white_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "brown_dye",
+  "ingredients": [
+    "regions_unexplored:small_desert_shrub"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:brown_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

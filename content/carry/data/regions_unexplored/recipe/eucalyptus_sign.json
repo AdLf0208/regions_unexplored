@@ -1,0 +1,18 @@
+{
+  "category": "misc",
+  "group": "wooden_sign",
+  "key": {
+    "#": "regions_unexplored:eucalyptus_planks",
+    "X": "minecraft:stick"
+  },
+  "pattern": [
+    "###",
+    "###",
+    " X "
+  ],
+  "result": {
+    "count": 3,
+    "id": "regions_unexplored:eucalyptus_sign"
+  },
+  "type": "minecraft:crafting_shaped"
+}

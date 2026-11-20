@@ -1,0 +1,4 @@
+{
+  "template": "minecraft:oak_sign",
+  "wall_block": "regions_unexplored:cobalt_wall_sign"
+}

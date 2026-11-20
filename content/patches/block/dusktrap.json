@@ -1,0 +1,11 @@
+{
+  "template": "minecraft:tall_grass",
+  "state_properties": {
+    "closed": {
+      "type": "boolean"
+    }
+  },
+  "default_state": {
+    "closed": "false"
+  }
+}

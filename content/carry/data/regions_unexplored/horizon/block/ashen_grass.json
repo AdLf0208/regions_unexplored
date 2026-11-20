@@ -1,0 +1,11 @@
+{
+  "template": "minecraft:grass_block",
+  "state_properties": {
+    "smouldering": {
+      "type": "boolean"
+    }
+  },
+  "default_state": {
+    "smouldering": "false"
+  }
+}

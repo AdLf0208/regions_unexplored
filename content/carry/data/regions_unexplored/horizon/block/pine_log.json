@@ -1,0 +1,15 @@
+{
+  "template": "minecraft:oak_log",
+  "state_properties": {
+    "is_stripped": {
+      "type": "boolean"
+    },
+    "transition_block": {
+      "type": "boolean"
+    }
+  },
+  "default_state": {
+    "is_stripped": "false",
+    "transition_block": "false"
+  }
+}

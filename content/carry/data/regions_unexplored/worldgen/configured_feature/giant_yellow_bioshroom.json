@@ -1,0 +1,28 @@
+{
+  "config": {
+    "cap_provider": {
+      "state": {
+        "id": "regions_unexplored:yellow_bioshroom_block"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "glow_block_provider": {
+      "state": {
+        "id": "regions_unexplored:glowing_yellow_bioshroom_block"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "minimum_size": 5,
+    "size_variation": 4,
+    "stem_provider": {
+      "state": {
+        "id": "regions_unexplored:yellow_bioshroom_stem",
+        "properties": {
+          "axis": "y"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "regions_unexplored:giant_yellow_bioshroom"
+}

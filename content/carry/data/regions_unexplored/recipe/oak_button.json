@@ -1,0 +1,12 @@
+{
+  "category": "redstone",
+  "group": "wooden_button",
+  "ingredients": [
+    "regions_unexplored:alpha_planks"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:oak_button"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "light_gray_dye",
+  "ingredients": [
+    "regions_unexplored:tassel"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:light_gray_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

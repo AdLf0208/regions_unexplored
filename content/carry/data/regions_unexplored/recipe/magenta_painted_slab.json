@@ -1,0 +1,15 @@
+{
+  "category": "building",
+  "group": "painted_slab",
+  "key": {
+    "#": "regions_unexplored:magenta_painted_planks"
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "regions_unexplored:magenta_painted_slab"
+  },
+  "type": "minecraft:crafting_shaped"
+}

@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "pink_dye",
+  "ingredients": [
+    "regions_unexplored:pink_snowbelle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:pink_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

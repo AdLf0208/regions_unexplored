@@ -1,0 +1,104 @@
+{
+  "config": {
+    "feature": {
+      "feature": {
+        "config": {
+          "allowed_placement": {
+            "blocks": "minecraft:air",
+            "type": "minecraft:matching_blocks"
+          },
+          "direction": "down",
+          "layers": [
+            {
+              "height": {
+                "distribution": [
+                  {
+                    "data": {
+                      "max_inclusive": 19,
+                      "min_inclusive": 0,
+                      "type": "minecraft:uniform"
+                    },
+                    "weight": 2
+                  },
+                  {
+                    "data": {
+                      "max_inclusive": 2,
+                      "min_inclusive": 0,
+                      "type": "minecraft:uniform"
+                    },
+                    "weight": 3
+                  },
+                  {
+                    "data": {
+                      "max_inclusive": 6,
+                      "min_inclusive": 0,
+                      "type": "minecraft:uniform"
+                    },
+                    "weight": 10
+                  }
+                ],
+                "type": "minecraft:weighted_list"
+              },
+              "provider": {
+                "state": {
+                  "id": "regions_unexplored:dropleaf_plant"
+                },
+                "type": "minecraft:simple_state_provider"
+              }
+            },
+            {
+              "height": 1,
+              "provider": {
+                "property": "age",
+                "source": {
+                  "state": {
+                    "id": "regions_unexplored:dropleaf",
+                    "properties": {
+                      "age": "0"
+                    }
+                  },
+                  "type": "minecraft:simple_state_provider"
+                },
+                "type": "minecraft:randomized_int_state_provider",
+                "values": {
+                  "max_inclusive": 24,
+                  "min_inclusive": 22,
+                  "type": "minecraft:uniform"
+                }
+              }
+            }
+          ],
+          "prioritize_tip": true
+        },
+        "type": "minecraft:block_column"
+      },
+      "placement": [
+        {
+          "predicate": {
+            "predicates": [
+              {
+                "direction": "down",
+                "offset": [
+                  0,
+                  1,
+                  0
+                ],
+                "type": "minecraft:has_sturdy_face"
+              },
+              {
+                "tag": "minecraft:air",
+                "type": "minecraft:matching_block_tag"
+              }
+            ],
+            "type": "minecraft:all_of"
+          },
+          "type": "minecraft:block_predicate_filter"
+        }
+      ]
+    },
+    "tries": 16,
+    "xz_spread": 4,
+    "y_spread": 2
+  },
+  "type": "minecraft:random_patch"
+}

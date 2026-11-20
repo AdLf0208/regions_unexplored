@@ -1,0 +1,75 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "children": [
+            {
+              "condition": {
+                "terms": [
+                  {
+                    "predicate": {
+                      "items": "#c:tools/shear"
+                    },
+                    "type": "minecraft:match_tool"
+                  },
+                  "minecraft:tool/can_silk_touch"
+                ],
+                "type": "minecraft:any_of"
+              },
+              "name": "regions_unexplored:brimwood_leaves",
+              "type": "minecraft:item"
+            },
+            {
+              "condition": {
+                "terms": [
+                  {
+                    "type": "minecraft:survives_explosion"
+                  },
+                  {
+                    "chances": [
+                      0.05,
+                      0.0625,
+                      0.083333336,
+                      0.1
+                    ],
+                    "enchantment": "minecraft:fortune",
+                    "type": "minecraft:table_bonus"
+                  }
+                ],
+                "type": "minecraft:all_of"
+              },
+              "name": "regions_unexplored:brimwood_sapling",
+              "type": "minecraft:item"
+            }
+          ],
+          "type": "minecraft:alternatives"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "condition": {
+        "term": {
+          "terms": [
+            {
+              "predicate": {
+                "items": "#c:tools/shear"
+              },
+              "type": "minecraft:match_tool"
+            },
+            "minecraft:tool/can_silk_touch"
+          ],
+          "type": "minecraft:any_of"
+        },
+        "type": "minecraft:inverted"
+      },
+      "entries": [],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "regions_unexplored:blocks/brimwood_leaves",
+  "type": "minecraft:block"
+}

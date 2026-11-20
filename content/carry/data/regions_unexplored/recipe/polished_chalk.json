@@ -1,0 +1,16 @@
+{
+  "category": "building",
+  "group": "chalk",
+  "key": {
+    "#": "regions_unexplored:chalk"
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 4,
+    "id": "regions_unexplored:polished_chalk"
+  },
+  "type": "minecraft:crafting_shaped"
+}

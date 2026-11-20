@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "saplings",
+  "ingredients": [
+    "regions_unexplored:willow_shrub"
+  ],
+  "result": {
+    "count": 2,
+    "id": "regions_unexplored:willow_sapling"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

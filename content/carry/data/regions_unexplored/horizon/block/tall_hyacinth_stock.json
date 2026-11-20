@@ -1,0 +1,19 @@
+{
+  "template": "minecraft:short_grass",
+  "state_properties": {
+    "tall_hyacinth_stock_shape": {
+      "type": "enum",
+      "values": [
+        "middle",
+        "frustum",
+        "tip",
+        "base",
+        "base_frustum",
+        "base_tip"
+      ]
+    }
+  },
+  "default_state": {
+    "tall_hyacinth_stock_shape": "middle"
+  }
+}

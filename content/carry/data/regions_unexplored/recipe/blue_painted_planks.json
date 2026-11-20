@@ -1,0 +1,18 @@
+{
+  "category": "building",
+  "group": "painted_planks",
+  "key": {
+    "#": "#minecraft:planks",
+    "X": "#c:blue_dyes"
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "regions_unexplored:blue_painted_planks"
+  },
+  "type": "minecraft:crafting_shaped"
+}

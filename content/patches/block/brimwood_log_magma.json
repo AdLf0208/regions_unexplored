@@ -1,0 +1,11 @@
+{
+  "template": "minecraft:magma_block",
+  "state_properties": {
+    "transition_block": {
+      "type": "boolean"
+    }
+  },
+  "default_state": {
+    "transition_block": "false"
+  }
+}

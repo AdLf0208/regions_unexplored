@@ -1,0 +1,17 @@
+{
+  "category": "building",
+  "group": "stone_grass",
+  "key": {
+    "#": "minecraft:stone",
+    "X": "#regions_unexplored:grass"
+  },
+  "pattern": [
+    "X",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:stone_grass_block"
+  },
+  "type": "minecraft:crafting_shaped"
+}

@@ -1,0 +1,12 @@
+{
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    "#regions_unexplored:larch_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "regions_unexplored:larch_planks"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

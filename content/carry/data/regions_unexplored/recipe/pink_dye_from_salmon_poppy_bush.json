@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "pink_dye",
+  "ingredients": [
+    "regions_unexplored:salmon_poppy_bush"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:pink_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

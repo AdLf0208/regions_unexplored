@@ -1,0 +1,19 @@
+{
+  "template": "minecraft:pointed_dripstone",
+  "state_properties": {
+    "hanging_prismarite_shape": {
+      "type": "enum",
+      "values": [
+        "column",
+        "frustum",
+        "tip"
+      ]
+    }
+  },
+  "default_state": {
+    "hanging_prismarite_shape": "column"
+  },
+  "properties": {
+    "random_ticks": false
+  }
+}

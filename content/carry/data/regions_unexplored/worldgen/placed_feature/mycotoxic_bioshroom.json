@@ -1,0 +1,21 @@
+{
+  "feature": "regions_unexplored:patch_yellow_bioshroom",
+  "placement": [
+    {
+      "count": 7,
+      "type": "minecraft:count_on_every_layer"
+    },
+    {
+      "predicate": {
+        "state": {
+          "id": "regions_unexplored:stone_bud"
+        },
+        "type": "minecraft:would_survive"
+      },
+      "type": "minecraft:block_predicate_filter"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

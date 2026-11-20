@@ -1,0 +1,8 @@
+{
+  "ingredient": "regions_unexplored:chalk_grass_block",
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:polished_chalk"
+  },
+  "type": "minecraft:stonecutting"
+}

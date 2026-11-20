@@ -1,0 +1,12 @@
+{
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    "regions_unexplored:alpha_log"
+  ],
+  "result": {
+    "count": 4,
+    "id": "regions_unexplored:alpha_planks"
+  },
+  "type": "minecraft:crafting_shapeless"
+}

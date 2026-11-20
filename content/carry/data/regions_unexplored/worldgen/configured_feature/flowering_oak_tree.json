@@ -1,0 +1,68 @@
+{
+  "config": {
+    "decorators": [],
+    "dirt_provider": {
+      "state": {
+        "id": "minecraft:dirt"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "foliage_placer": {
+      "height": 3,
+      "offset": 0,
+      "radius": 2,
+      "type": "minecraft:blob_foliage_placer"
+    },
+    "foliage_provider": {
+      "entries": [
+        {
+          "data": {
+            "id": "minecraft:oak_leaves",
+            "properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 3
+        },
+        {
+          "data": {
+            "id": "regions_unexplored:flowering_leaves",
+            "properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 1
+        }
+      ],
+      "type": "minecraft:weighted_state_provider"
+    },
+    "force_dirt": false,
+    "ignore_vines": true,
+    "minimum_size": {
+      "limit": 1,
+      "lower_size": 0,
+      "type": "minecraft:two_layers_feature_size",
+      "upper_size": 1
+    },
+    "trunk_placer": {
+      "base_height": 4,
+      "height_rand_a": 3,
+      "height_rand_b": 0,
+      "type": "minecraft:straight_trunk_placer"
+    },
+    "trunk_provider": {
+      "state": {
+        "id": "minecraft:oak_log",
+        "properties": {
+          "axis": "y"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "minecraft:tree"
+}

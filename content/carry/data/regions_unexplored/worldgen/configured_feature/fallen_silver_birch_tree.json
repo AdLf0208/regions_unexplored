@@ -1,0 +1,39 @@
+{
+  "config": {
+    "foliage_provider": {
+      "state": {
+        "id": "regions_unexplored:silver_birch_leaves",
+        "properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "has_leaves": false,
+    "minimum_size": 4,
+    "size_variation": 3,
+    "stump_provider": {
+      "state": {
+        "id": "regions_unexplored:silver_birch_log",
+        "properties": {
+          "axis": "y",
+          "is_base": "true"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "trunk_provider": {
+      "state": {
+        "id": "regions_unexplored:silver_birch_log",
+        "properties": {
+          "axis": "y",
+          "is_base": "false"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "regions_unexplored:fallen_blob_tree"
+}

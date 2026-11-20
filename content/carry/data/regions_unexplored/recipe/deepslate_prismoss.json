@@ -1,0 +1,17 @@
+{
+  "category": "building",
+  "group": "prismoss",
+  "key": {
+    "#": "minecraft:deepslate",
+    "X": "regions_unexplored:prismoss_sprout"
+  },
+  "pattern": [
+    "X",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "regions_unexplored:deepslate_prismoss"
+  },
+  "type": "minecraft:crafting_shaped"
+}

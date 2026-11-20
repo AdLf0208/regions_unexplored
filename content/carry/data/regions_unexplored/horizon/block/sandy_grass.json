@@ -1,0 +1,11 @@
+{
+  "template": "minecraft:short_grass",
+  "state_properties": {
+    "is_red": {
+      "type": "boolean"
+    }
+  },
+  "default_state": {
+    "is_red": "false"
+  }
+}

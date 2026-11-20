@@ -1,0 +1,29 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "children": [
+            {
+              "condition": "minecraft:tool/can_silk_touch",
+              "name": "regions_unexplored:brimwood_log_magma",
+              "type": "minecraft:item"
+            },
+            {
+              "condition": {
+                "type": "minecraft:survives_explosion"
+              },
+              "name": "regions_unexplored:brimwood_log",
+              "type": "minecraft:item"
+            }
+          ],
+          "type": "minecraft:alternatives"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "regions_unexplored:blocks/brimwood_log_magma",
+  "type": "minecraft:block"
+}

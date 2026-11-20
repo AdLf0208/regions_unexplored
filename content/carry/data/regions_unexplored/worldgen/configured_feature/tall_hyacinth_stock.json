@@ -1,0 +1,16 @@
+{
+  "config": {
+    "minimum_size": 1,
+    "size_variation": 14,
+    "stock_provider": {
+      "state": {
+        "id": "regions_unexplored:tall_hyacinth_stock",
+        "properties": {
+          "tall_hyacinth_stock_shape": "base_tip"
+        }
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "regions_unexplored:tall_hyacinth_stock"
+}

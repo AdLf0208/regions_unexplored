@@ -1,0 +1,28 @@
+{
+  "config": {
+    "sapling_provider": {
+      "entries": [
+        {
+          "data": {
+            "id": "regions_unexplored:larch_shrub",
+            "properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 1
+        },
+        {
+          "data": {
+            "id": "regions_unexplored:golden_larch_shrub",
+            "properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 3
+        }
+      ],
+      "type": "minecraft:weighted_state_provider"
+    }
+  },
+  "type": "regions_unexplored:shrub"
+}

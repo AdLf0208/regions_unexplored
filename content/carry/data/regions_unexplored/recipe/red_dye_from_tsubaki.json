@@ -1,0 +1,12 @@
+{
+  "category": "misc",
+  "group": "red_dye",
+  "ingredients": [
+    "regions_unexplored:tsubaki"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:red_dye"
+  },
+  "type": "minecraft:crafting_shapeless"
+}
