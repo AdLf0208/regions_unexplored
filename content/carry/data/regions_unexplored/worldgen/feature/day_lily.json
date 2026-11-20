@@ -1,0 +1,9 @@
+{
+  "to_place": {
+    "id": "regions_unexplored:day_lily",
+    "properties": {
+      "half": "lower"
+    }
+  },
+  "type": "minecraft:simple_block"
+}

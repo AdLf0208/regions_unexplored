@@ -1,0 +1,20 @@
+{
+  "to_place": {
+    "noise": {
+      "base_amplitude": 1.0,
+      "base_octave": 0
+    },
+    "scale": 0.075,
+    "seed": 2345,
+    "states": [
+      {
+        "id": "regions_unexplored:poppy_bush"
+      },
+      {
+        "id": "regions_unexplored:salmon_poppy_bush"
+      }
+    ],
+    "type": "minecraft:noise"
+  },
+  "type": "minecraft:simple_block"
+}

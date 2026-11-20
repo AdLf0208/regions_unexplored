@@ -1,0 +1,41 @@
+{
+  "to_place": {
+    "entries": [
+      {
+        "data": {
+          "id": "regions_unexplored:stone_grass_block",
+          "properties": {
+            "snowy": "false"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:mossy_stone"
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "minecraft:stone"
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "minecraft:cobblestone"
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "minecraft:air"
+        },
+        "weight": 75
+      }
+    ],
+    "type": "minecraft:weighted"
+  },
+  "type": "minecraft:simple_block"
+}

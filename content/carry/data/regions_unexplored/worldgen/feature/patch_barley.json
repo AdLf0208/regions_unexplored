@@ -1,0 +1,9 @@
+{
+  "to_place": {
+    "id": "regions_unexplored:barley",
+    "properties": {
+      "half": "lower"
+    }
+  },
+  "type": "minecraft:simple_block"
+}

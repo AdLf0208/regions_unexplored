@@ -7,8 +7,10 @@
 # with `--dev-mod content/carry`.
 #
 # Default run (offscreen, creative, The End):
-#   0. tools/upgrade_shapes.py --check proves every carried biome and
-#      advancement is in the 26.3 shape, then tools/verify_content.py compares
+#   0. tools/upgrade_shapes.py --check and tools/upgrade_features.py --check
+#      prove every carried biome, advancement and feature is in the 26.3 shape
+#      (and that the features live under worldgen/feature/, the folder 26.3
+#      reads), then tools/verify_content.py compares
 #      the carried folder mod with the 1.21.1 jar (block declarations,
 #      templates, items, models/textures, recipes and their tags, loot, lang,
 #      tags, worldgen counts and shapes, advancements);
@@ -25,11 +27,13 @@
 #   5. four recipes work in a real table (willow planks via the carried tag,
 #      `#minecraft:planks`+`#c:yellow_dyes`, `#c:glass`+crystals, and the
 #      restored magnolia-flower recipe), each with a wrong-ingredient control;
-#   6. the loader refuses the 307 carried 1.21.1 configured-feature configs at
-#      load (0 reach the registry) while the 343 placed features are kept and
-#      all name a dropped feature: `/place feature minecraft:oak` (control)
-#      places, and a carried feature id is refused by the feature registry
-#      (the documented gap);
+#   6. the 307 carried configured features register (26.3 reads
+#      `worldgen/feature/`), and one feature per converted family **places its
+#      block**: tree, random_patch, flower, simple_block, disk, huge mushroom,
+#      ore, bamboo, waterlogged_vegetation_patch, block_blob (the retired
+#      `forest_rock`) and random_selector, each counted with `fill … replace`
+#      after `/place feature`; the vanilla oak control places, and a kept
+#      Java-type feature (`ocean_rock`) does not — the differential;
 #   7. `/locate biome` transcript: a RU biome id **resolves** in the registry
 #      ("Could not find a biome of type … within a reasonable distance": it is
 #      registered, TerraBlender's placement is unported), while an unknown id is
@@ -108,9 +112,11 @@ fail() { echo "FAIL: $*" >&2; exit 1; }
 if [ "$SKIP_VERIFY" = 1 ]; then
     echo "== jar comparison skipped (SKIP_VERIFY=1) =="
 else
-    say "26.3 shapes: every carried biome and advancement (tools/upgrade_shapes.py --check)"
+    say "26.3 shapes: every carried biome, advancement and feature"
     python3 "$PORT/tools/upgrade_shapes.py" --check --content "$CONTENT" \
         || fail "the carried world data is not in 26.3's shape"
+    python3 "$PORT/tools/upgrade_features.py" --check --content "$CONTENT" \
+        || fail "the carried features are not in 26.3's shape"
     say "data fidelity: carried content vs the 1.21.1 jar"
     RU_CONTENT="$CONTENT" python3 "$PORT/tools/verify_content.py" || fail "verify_content.py failed"
 fi
@@ -233,13 +239,12 @@ ru_biomes = [k for k in biomes if k.startswith("regions_unexplored:")]
 print(f"features bundle: {len(ru_feats)} regions_unexplored entries")
 print(f"placed features bundle: {len(ru_placed)} regions_unexplored entries")
 print(f"biomes bundle: {len(ru_biomes)} regions_unexplored entries")
-# 0b14f8a decodes configured features at load: the 307 carried 1.21.1 configs
-# (`trunk_provider`, wrapped `to_place`, the mod's own Java types) are refused
-# and dropped, while the 343 placed features decode. That is the recorded gap,
-# measured rather than assumed: a pin that starts accepting them fails here.
-if ru_feats:
-    raise SystemExit(f"the game registered {len(ru_feats)} carried configured features; "
-                     "the port's gap says the 1.21.1 configs are refused")
+# 26.3 reads `worldgen/feature/` (1.21.1's folder was `configured_feature`,
+# which the content loader never looks at) and registers every carried id; the
+# ones whose types 26.3 decodes then place (the per-family checks below).
+if len(ru_feats) != 307:
+    raise SystemExit(f"expected the 307 carried configured features in the "
+                     f"registry, found {len(ru_feats)}")
 if len(ru_placed) != 343:
     raise SystemExit(f"expected 343 carried placed features, found {len(ru_placed)}")
 inert = []
@@ -247,10 +252,9 @@ for key in ru_placed:
     entry = json.loads(placed[key]) if isinstance(placed[key], str) else placed[key]
     if entry.get("feature") not in feats:
         inert.append(key)
-print(f"placed features naming a dropped configured feature: {len(inert)}/{len(ru_placed)}")
-if len(inert) != len(ru_placed):
-    raise SystemExit("some carried placed features name a registered feature; "
-                     "the recorded gap says the configured features are dropped")
+print(f"placed features naming a registered configured feature: {len(ru_placed) - len(inert)}/{len(ru_placed)}")
+if inert:
+    raise SystemExit(f"{len(inert)} placed features name a feature outside the registry: {inert[:3]}")
 if len(ru_biomes) != 71:
     raise SystemExit(f"expected the 71 carried biomes in the level's registry, found {len(ru_biomes)}")
 # The bundle holds each biome's file text; parse it and check the 26.3 shape the
@@ -307,7 +311,7 @@ for block in ("regions_unexplored:willow_planks", "regions_unexplored:icicle",
     if block not in states:
         raise SystemExit(f"{block} has no model-state row")
 PY
-echo "71/71 biomes registered with their 26.3 attributes; 0 of the 307 configured features registered (refused at load), 343 placed features kept; 733-item tab"
+echo "71/71 biomes registered with their 26.3 attributes; 307/307 configured features registered under worldgen/feature/ and 343 placed features name one; 733-item tab"
 
 # --------------------------------------------------------------- all blocks
 say "all ${#ALL[@]} carried ids bind their default state"
@@ -506,7 +510,7 @@ ctl wait 10
 python3 "$PORT/tools/craft_check.py" "$SOCK" "$CTL" 40 80 60 || fail "the crafting-table checks failed"
 
 # ---------------------------------------------------------------- features
-say "carried features are dropped at load; the vanilla oak control places"
+say "the converted features place: one per family, with a kept feature as the control"
 end "fill 60 79 54 76 79 74 minecraft:grass_block"
 end "fill 60 80 54 76 90 74 minecraft:air"
 ctl wait 3
@@ -518,18 +522,63 @@ control=$(ctl blocks 58 80 58 70 90 68)
 control_logs=$(echo "$control" | jq -r '.counts["minecraft:oak_log"] // 0')
 [ "$control_logs" -ge 1 ] || fail "the vanilla oak control placed no oak_log"
 echo "control: /place feature minecraft:oak placed $control_logs oak_log"
-# 0b14f8a decodes configured features at load, so the carried 1.21.1 configs
-# never reach the registry: the command refuses the id exactly as it refuses a
-# made-up one. The content-root check above proves it is the load, not a typo.
-ru_reply=$(ctl command "place feature regions_unexplored:alpha_oak_tree 68 80 64" 2>&1 || true)
-echo "regions_unexplored:alpha_oak_tree -> $ru_reply"
-grep -q "Can't find element 'regions_unexplored:alpha_oak_tree' in registry 'minecraft:worldgen/feature'" <<<"$ru_reply" \
-    || fail "the dropped carried feature was not refused by the feature registry: $ru_reply"
-ctl wait 5
-ru_reply2=$(ctl command "place feature regions_unexplored:barrel_cactus 72 80 64" 2>&1 || true)
-echo "regions_unexplored:barrel_cactus -> $ru_reply2"
-grep -q "Can't find element 'regions_unexplored:barrel_cactus' in registry 'minecraft:worldgen/feature'" <<<"$ru_reply2" \
-    || fail "the dropped carried feature was not refused by the feature registry: $ru_reply2"
+
+# One feature per family the port converts. Each is placed at its own site on a
+# floor it accepts, then the expected block is counted with `fill … replace`,
+# which reports the number of blocks changed server-side. A feature that does
+# not place leaves the count at 0, so every line is an assertion that can fail.
+# The kept families (the mod's own Java feature types, `nether_forest_vegetation`,
+# a non-vanilla multiface block) are the differential at the end.
+end "forceload add 80 80 320 120" >/dev/null
+ctl wait 20
+feature_site() { # x z floor-block
+    end "fill $(( $1 - 10 )) 79 $(( $2 - 10 )) $(( $1 + 10 )) 79 $(( $2 + 10 )) minecraft:stone"
+    end "fill $(( $1 - 10 )) 80 $(( $2 - 10 )) $(( $1 + 10 )) 96 $(( $2 + 10 )) minecraft:air"
+    end "fill $(( $1 - 10 )) 80 $(( $2 - 10 )) $(( $1 + 10 )) 82 $(( $2 + 10 )) $3"
+    ctl wait 3
+}
+feature_check() { # x z configured-feature expected-block family [origin-y]
+    local x=$1 z=$2 id=$3 want=$4 family=$5 y=${6:-83} reply got
+    reply=$(ctl command "place feature regions_unexplored:$id $x $y $z" 2>&1 || true)
+    echo "regions_unexplored:$id -> $(echo "$reply" | jq -r '.chat[0]' 2>/dev/null | head -c 70)"
+    grep -q 'Placed' <<<"$reply" \
+        || fail "$family: /place feature regions_unexplored:$id did not place: $reply"
+    got=$(ctl command "fill $(( x - 10 )) 79 $(( z - 10 )) $(( x + 10 )) 96 $(( z + 10 )) minecraft:air replace $want" \
+          | jq -r '.chat[0] // ""')
+    echo "  $family: $want -> $got"
+    grep -q 'Successfully filled' <<<"$got" \
+        || fail "$family: $id placed no $want ($got)"
+}
+feature_site 100 100 minecraft:grass_block
+feature_check 100 100 alpha_oak_tree regions_unexplored:alpha_log tree
+feature_site 120 100 minecraft:grass_block
+feature_check 120 100 patch_alpha_dandelion regions_unexplored:alpha_dandelion random_patch
+feature_site 140 100 minecraft:grass_block
+feature_check 140 100 corpse_flower regions_unexplored:corpse_flower flower
+feature_site 160 100 minecraft:grass_block
+feature_check 160 100 aster regions_unexplored:aster simple_block
+feature_site 180 100 minecraft:dirt
+feature_check 180 100 disk_clay minecraft:clay disk
+feature_site 200 100 minecraft:grass_block
+feature_check 200 100 giant_brown_mushroom minecraft:brown_mushroom_block huge_mushroom
+feature_site 220 100 minecraft:stone
+feature_check 220 100 ore_redstone_large minecraft:redstone_ore ore 81
+feature_site 240 100 minecraft:dirt
+feature_check 240 100 bamboo minecraft:bamboo bamboo
+feature_site 260 100 minecraft:stone
+feature_check 260 100 mineral_pool minecraft:calcite waterlogged_vegetation_patch
+feature_site 280 100 minecraft:grass_block
+feature_check 280 100 redwoods_rock minecraft:mossy_cobblestone block_blob
+feature_site 300 100 minecraft:grass_block
+feature_check 300 100 prairie_tree_mix minecraft:oak_log random_selector
+
+# The differential: a feature whose type is the mod's own Java class never
+# reaches the registry, so the same command fails. This is what the conversion
+# bought — the converted ids above place, the kept ones do not.
+kept_reply=$(ctl command "place feature regions_unexplored:ocean_rock 320 83 100" 2>&1 || true)
+echo "regions_unexplored:ocean_rock (kept, Java feature type) -> $(echo "$kept_reply" | jq -r '.chat[0]' 2>/dev/null)"
+grep -q 'Placed' <<<"$kept_reply" \
+    && fail "a kept Java-type feature placed; the recorded gap is wrong"
 
 # ------------------------------------------------------------------ biomes
 say "biome command transcript: a RU biome id resolves, an unknown id is refused"
@@ -558,7 +607,7 @@ ctl setblock 90 80 70 regions_unexplored:bogus_block >/dev/null 2>&1 || true
 [ "$(block_state 90 80 70)" = "minecraft:air" ] || fail "regions_unexplored:bogus_block became a block"
 echo "unknown block/item ids are refused"
 
-echo "PASS: the level opens with 71/71 carried biomes registered and their 26.3 attributes (sky colour, background music, natural_mob_spawns) read, and a RU biome id resolves while an unknown id is refused; 844/844 block ids bind; 88 sign states, 27 leaves, 33 saplings, 4 multiface, 9 petal covers, 3 pointed, 10 snowy, 2 farmland and 14 single-state blocks bind their patched states; 10 items give; 4 recipes craft (incl. #c:yellow_dyes, #c:glass and a restored recipe) while their controls stay empty; the 307 carried configured-feature configs are refused at load (0 registered) while the 343 placed features are kept and all name a dropped feature, and the vanilla oak control places; unknown ids are refused"
+echo "PASS: the level opens with 71/71 carried biomes registered and their 26.3 attributes (sky colour, background music, natural_mob_spawns) read, and a RU biome id resolves while an unknown id is refused; 844/844 block ids bind; 88 sign states, 27 leaves, 33 saplings, 4 multiface, 9 petal covers, 3 pointed, 10 snowy, 2 farmland and 14 single-state blocks bind their patched states; 10 items give; 4 recipes craft (incl. #c:yellow_dyes, #c:glass and a restored recipe) while their controls stay empty; the 307 carried configured features register and one per converted family places its block (tree, random_patch, flower, simple_block, disk, huge mushroom, ore, bamboo, waterlogged_vegetation_patch, block_blob, random_selector), the vanilla oak control places, and a kept Java-type feature does not; unknown ids are refused"
 
 [ "$NEGATIVE" = 1 ] || exit 0
 echo "NEGATIVE: the deliberately false smouldering assertion should have failed the run"

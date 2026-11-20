@@ -1,0 +1,20 @@
+{
+  "to_place": {
+    "entries": [
+      {
+        "data": {
+          "id": "regions_unexplored:bleeding_heart"
+        },
+        "weight": 3
+      },
+      {
+        "data": {
+          "id": "minecraft:lily_of_the_valley"
+        },
+        "weight": 2
+      }
+    ],
+    "type": "minecraft:weighted"
+  },
+  "type": "minecraft:simple_block"
+}

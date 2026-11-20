@@ -1,0 +1,26 @@
+{
+  "to_place": {
+    "entries": [
+      {
+        "data": {
+          "id": "regions_unexplored:duskmelon",
+          "properties": {
+            "age": "1"
+          }
+        },
+        "weight": 3
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:duskmelon",
+          "properties": {
+            "age": "2"
+          }
+        },
+        "weight": 2
+      }
+    ],
+    "type": "minecraft:weighted"
+  },
+  "type": "minecraft:simple_block"
+}

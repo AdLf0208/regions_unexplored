@@ -2,26 +2,58 @@
   "feature": "regions_unexplored:patch_redstone_bud",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 255
+      "count": 255,
+      "type": "minecraft:count"
     },
     {
       "type": "minecraft:in_square"
     },
     {
-      "type": "minecraft:height_range",
       "height": {
-        "type": "minecraft:uniform",
         "max_inclusive": {
           "absolute": 256
         },
         "min_inclusive": {
           "above_bottom": 0
-        }
-      }
+        },
+        "type": "minecraft:uniform"
+      },
+      "type": "minecraft:height_range"
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "count": 128,
+      "type": "minecraft:count"
+    },
+    {
+      "type": "minecraft:offset",
+      "x": {
+        "max": 7,
+        "min": -7,
+        "plateau": 0,
+        "type": "minecraft:trapezoid"
+      },
+      "y": {
+        "max": 3,
+        "min": -3,
+        "plateau": 0,
+        "type": "minecraft:trapezoid"
+      },
+      "z": {
+        "max": 7,
+        "min": -7,
+        "plateau": 0,
+        "type": "minecraft:trapezoid"
+      }
+    },
+    {
+      "predicate": {
+        "blocks": "minecraft:air",
+        "type": "minecraft:matching_blocks"
+      },
+      "type": "minecraft:block_predicate_filter"
     }
   ]
 }

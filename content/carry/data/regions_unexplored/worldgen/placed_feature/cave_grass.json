@@ -2,18 +2,50 @@
   "feature": "regions_unexplored:patch_grass",
   "placement": [
     {
-      "type": "minecraft:count_on_every_layer",
-      "count": 70
+      "count": 70,
+      "type": "minecraft:count_on_every_layer"
     },
     {
-      "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:matching_blocks",
-        "blocks": "minecraft:air"
-      }
+        "blocks": "minecraft:air",
+        "type": "minecraft:matching_blocks"
+      },
+      "type": "minecraft:block_predicate_filter"
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "count": 32,
+      "type": "minecraft:count"
+    },
+    {
+      "type": "minecraft:offset",
+      "x": {
+        "max": 7,
+        "min": -7,
+        "plateau": 0,
+        "type": "minecraft:trapezoid"
+      },
+      "y": {
+        "max": 3,
+        "min": -3,
+        "plateau": 0,
+        "type": "minecraft:trapezoid"
+      },
+      "z": {
+        "max": 7,
+        "min": -7,
+        "plateau": 0,
+        "type": "minecraft:trapezoid"
+      }
+    },
+    {
+      "predicate": {
+        "blocks": "minecraft:air",
+        "type": "minecraft:matching_blocks"
+      },
+      "type": "minecraft:block_predicate_filter"
     }
   ]
 }

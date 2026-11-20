@@ -2,26 +2,24 @@
   "feature": "regions_unexplored:patch_barley",
   "placement": [
     {
-      "type": "minecraft:noise_based_count",
       "noise_factor": 75.0,
       "noise_offset": 0.0,
-      "noise_to_count_ratio": 155
+      "noise_to_count_ratio": 155,
+      "type": "minecraft:noise_based_count"
     },
     {
       "type": "minecraft:in_square"
     },
     {
-      "type": "minecraft:surface_water_depth_filter",
-      "max_water_depth": 0
+      "max_water_depth": 0,
+      "type": "minecraft:surface_water_depth_filter"
     },
     {
-      "type": "minecraft:heightmap",
-      "heightmap": "WORLD_SURFACE_WG"
+      "heightmap": "WORLD_SURFACE_WG",
+      "type": "minecraft:heightmap"
     },
     {
-      "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:matching_blocks",
         "blocks": [
           "minecraft:grass_block",
           "regions_unexplored:peat_grass_block",
@@ -33,11 +31,45 @@
           0,
           -1,
           0
-        ]
-      }
+        ],
+        "type": "minecraft:matching_blocks"
+      },
+      "type": "minecraft:block_predicate_filter"
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "count": 96,
+      "type": "minecraft:count"
+    },
+    {
+      "type": "minecraft:offset",
+      "x": {
+        "max": 7,
+        "min": -7,
+        "plateau": 0,
+        "type": "minecraft:trapezoid"
+      },
+      "y": {
+        "max": 3,
+        "min": -3,
+        "plateau": 0,
+        "type": "minecraft:trapezoid"
+      },
+      "z": {
+        "max": 7,
+        "min": -7,
+        "plateau": 0,
+        "type": "minecraft:trapezoid"
+      }
+    },
+    {
+      "predicate": {
+        "blocks": "minecraft:air",
+        "type": "minecraft:matching_blocks"
+      },
+      "type": "minecraft:block_predicate_filter"
     }
   ]
 }

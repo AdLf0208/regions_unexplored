@@ -1,0 +1,9 @@
+{
+  "to_place": {
+    "id": "regions_unexplored:salmonberry_bush",
+    "properties": {
+      "age": "3"
+    }
+  },
+  "type": "minecraft:simple_block"
+}

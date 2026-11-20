@@ -2,17 +2,49 @@
   "feature": "regions_unexplored:patch_mycotoxic_mushrooms",
   "placement": [
     {
-      "type": "minecraft:count_on_every_layer",
-      "count": 1
+      "count": 1,
+      "type": "minecraft:count_on_every_layer"
     },
     {
-      "type": "minecraft:noise_threshold_count",
       "above_noise": 12,
       "below_noise": 5,
-      "noise_level": -0.8
+      "noise_level": -0.8,
+      "type": "minecraft:noise_threshold_count"
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "count": 16,
+      "type": "minecraft:count"
+    },
+    {
+      "type": "minecraft:offset",
+      "x": {
+        "max": 6,
+        "min": -6,
+        "plateau": 0,
+        "type": "minecraft:trapezoid"
+      },
+      "y": {
+        "max": 2,
+        "min": -2,
+        "plateau": 0,
+        "type": "minecraft:trapezoid"
+      },
+      "z": {
+        "max": 6,
+        "min": -6,
+        "plateau": 0,
+        "type": "minecraft:trapezoid"
+      }
+    },
+    {
+      "predicate": {
+        "blocks": "minecraft:air",
+        "type": "minecraft:matching_blocks"
+      },
+      "type": "minecraft:block_predicate_filter"
     }
   ]
 }

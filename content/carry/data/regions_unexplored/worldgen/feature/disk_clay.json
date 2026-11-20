@@ -1,0 +1,27 @@
+{
+  "half_height": 1,
+  "radius": {
+    "max_inclusive": 3,
+    "min_inclusive": 2,
+    "type": "minecraft:uniform"
+  },
+  "state_provider": {
+    "fallback": {
+      "id": "minecraft:clay"
+    },
+    "rules": [],
+    "type": "minecraft:rule_based"
+  },
+  "target": {
+    "blocks": [
+      "minecraft:dirt",
+      "regions_unexplored:peat_dirt",
+      "regions_unexplored:silt_dirt",
+      "regions_unexplored:silt_mud",
+      "regions_unexplored:peat_mud",
+      "minecraft:clay"
+    ],
+    "type": "minecraft:matching_blocks"
+  },
+  "type": "minecraft:disk"
+}

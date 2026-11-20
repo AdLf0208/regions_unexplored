@@ -1,0 +1,26 @@
+{
+  "to_place": {
+    "entries": [
+      {
+        "data": {
+          "id": "minecraft:azure_bluet"
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "minecraft:oxeye_daisy"
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:felicia_daisy"
+        },
+        "weight": 2
+      }
+    ],
+    "type": "minecraft:weighted"
+  },
+  "type": "minecraft:simple_block"
+}

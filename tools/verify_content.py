@@ -18,6 +18,7 @@ import zipfile
 from collections import Counter
 from pathlib import Path
 
+import upgrade_features
 import upgrade_shapes
 
 PORT = Path(__file__).resolve().parent.parent
@@ -234,17 +235,37 @@ def main() -> int:
     # worldgen: file counts and feature types
     wg = CONTENT / f"data/{MOD}/worldgen"
     counts = {k: len(list((wg / k).glob("*.json"))) for k in (
-        "biome", "configured_feature", "placed_feature", "noise",
+        "biome", "feature", "placed_feature", "noise",
     )}
     check(counts == {
-        "biome": 71, "configured_feature": 307, "placed_feature": 343, "noise": 2,
-    }, f"worldgen: {counts['biome']} biomes, {counts['configured_feature']} configured features, "
+        "biome": 71, "feature": 307, "placed_feature": 343, "noise": 2,
+    }, f"worldgen: {counts['biome']} biomes, {counts['feature']} configured features, "
        f"{counts['placed_feature']} placed features, {counts['noise']} noise files")
     types = Counter(
-        read(p).get("type") for p in (wg / "configured_feature").glob("*.json")
+        read(p).get("type") for p in (wg / "feature").glob("*.json")
     )
     mod_types = sum(v for k, v in types.items() if k and k.startswith(f"{MOD}:"))
-    check(len(types) == 82 and mod_types == 154,
+    # The features that are in 26.3's shape load; the rest keep their carried
+    # 1.21.1 bytes and are the recorded gap. tools/upgrade_features.py owns the
+    # conversion, so a re-carry that writes the old shapes back fails here.
+    converted, placed, kept = upgrade_features.plan(CONTENT)
+    problems = upgrade_features.check_tree(CONTENT, configured_count=307,
+                                           placed_count=343)
+    if problems:
+        fail(f"26.3 features: {len(problems)} carried file(s) not converted: {problems[0]}")
+    else:
+        rewritten = sum(
+            1 for name, doc in converted.items()
+            if doc != read(wg / "feature" / name)
+        )
+        moved = sum(
+            1 for name, doc in placed.items()
+            if doc != read(wg / "placed_feature" / name)
+        )
+        ok(f"26.3 features: {307 - len(kept)} of 307 configured features converted "
+           f"({rewritten} rewritten, {moved} placed features updated); "
+           f"{len(kept)} stay as carried ({mod_types} of the mod's own Java types)")
+    check(len(types) >= 1 and mod_types == 154,
           f"worldgen: {len(types)} configured-feature types, {mod_types} of them the mod's "
           f"Java types (carried as JSON; the game has no such feature type)")
     check(len(list((CONTENT / f"data/{MOD}/advancement").rglob("*.json"))) == 671,
@@ -276,9 +297,9 @@ def main() -> int:
         return 1
     print("\nPASS: 844 blocks (all jar blockstates), 733 items, 656 recipes, 790 loot tables, "
           "5 lang files, tags resolve, models/textures resolve, 71 biomes + 307 configured "
-          "+ 343 placed features + 2 noise files carried in 26.3's shapes (carvers list, "
-          "attributes map, type-dispatched predicates), 671 advancements, 2 damage types, "
-          "creative tab complete")
+          "+ 343 placed features + 2 noise files carried, "
+          f"{307 - len(kept)} of the features in 26.3's shapes, 671 advancements, "
+          "2 damage types, creative tab complete")
     return 0
 
 

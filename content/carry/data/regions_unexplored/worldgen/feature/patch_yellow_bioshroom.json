@@ -1,0 +1,26 @@
+{
+  "to_place": {
+    "entries": [
+      {
+        "data": {
+          "id": "regions_unexplored:tall_yellow_bioshroom",
+          "properties": {
+            "half": "lower"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:yellow_bioshroom",
+          "properties": {
+            "stage": "0"
+          }
+        },
+        "weight": 6
+      }
+    ],
+    "type": "minecraft:weighted"
+  },
+  "type": "minecraft:simple_block"
+}

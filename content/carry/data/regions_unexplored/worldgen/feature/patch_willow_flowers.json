@@ -1,0 +1,32 @@
+{
+  "to_place": {
+    "entries": [
+      {
+        "data": {
+          "id": "regions_unexplored:felicia_daisy"
+        },
+        "weight": 2
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:blue_lupine"
+        },
+        "weight": 2
+      },
+      {
+        "data": {
+          "id": "minecraft:allium"
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "minecraft:cornflower"
+        },
+        "weight": 2
+      }
+    ],
+    "type": "minecraft:weighted"
+  },
+  "type": "minecraft:simple_block"
+}

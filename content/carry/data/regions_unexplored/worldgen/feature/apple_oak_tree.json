@@ -1,0 +1,108 @@
+{
+  "below_trunk_provider": {
+    "id": "minecraft:dirt"
+  },
+  "decorators": [],
+  "foliage_placer": {
+    "height": 3,
+    "offset": 0,
+    "radius": 2,
+    "type": "minecraft:blob_foliage_placer"
+  },
+  "foliage_provider": {
+    "entries": [
+      {
+        "data": {
+          "id": "minecraft:oak_leaves",
+          "properties": {
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        },
+        "weight": 18
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:apple_oak_leaves",
+          "properties": {
+            "age": "0",
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:apple_oak_leaves",
+          "properties": {
+            "age": "1",
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:apple_oak_leaves",
+          "properties": {
+            "age": "2",
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        },
+        "weight": 2
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:apple_oak_leaves",
+          "properties": {
+            "age": "3",
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        },
+        "weight": 2
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:apple_oak_leaves",
+          "properties": {
+            "age": "4",
+            "distance": "7",
+            "persistent": "false",
+            "waterlogged": "false"
+          }
+        },
+        "weight": 2
+      }
+    ],
+    "type": "minecraft:weighted"
+  },
+  "ignore_vines": true,
+  "minimum_size": {
+    "limit": 1,
+    "lower_size": 0,
+    "type": "minecraft:two_layers_feature_size",
+    "upper_size": 1
+  },
+  "trunk_placer": {
+    "base_height": 4,
+    "height_rand_a": 2,
+    "height_rand_b": 0,
+    "type": "minecraft:straight_trunk_placer"
+  },
+  "trunk_provider": {
+    "id": "minecraft:oak_log",
+    "properties": {
+      "axis": "y"
+    }
+  },
+  "type": "minecraft:tree"
+}

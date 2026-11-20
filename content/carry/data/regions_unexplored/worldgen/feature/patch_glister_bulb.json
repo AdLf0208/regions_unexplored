@@ -1,0 +1,9 @@
+{
+  "to_place": {
+    "id": "regions_unexplored:glister_bulb",
+    "properties": {
+      "half": "lower"
+    }
+  },
+  "type": "minecraft:simple_block"
+}

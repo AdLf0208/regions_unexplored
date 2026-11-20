@@ -1,0 +1,29 @@
+{
+  "to_place": {
+    "entries": [
+      {
+        "data": {
+          "id": "regions_unexplored:bladed_grass"
+        },
+        "weight": 4
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:bladed_tall_grass",
+          "properties": {
+            "half": "lower"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "minecraft:short_grass"
+        },
+        "weight": 4
+      }
+    ],
+    "type": "minecraft:weighted"
+  },
+  "type": "minecraft:simple_block"
+}

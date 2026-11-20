@@ -53,5 +53,23 @@ done
 #    tools/upgrade_shapes.py applies the conversion and proves every file.
 python3 ../tools/upgrade_shapes.py --write
 python3 ../tools/upgrade_shapes.py --check
+
+# 4b. The 26.3 feature shapes, and the folder 26.3 reads them from. 1.21.1
+#     names the registry folder `configured_feature`; 26.3 renamed it to
+#     `feature`, and the content loader only reads `worldgen/feature/`
+#     (`horizon-client/src/mod_content.rs::worldgen_entry`), so a carried
+#     folder is never read at all. tools/upgrade_features.py moves the 307
+#     files and converts the ones whose types 26.3 has a decoder for (the
+#     tree's `dirt_provider` -> `below_trunk_provider`, the state providers,
+#     `random_patch`/`flower` -> their inner feature + placement, ...); the
+#     rest keep their carried bytes and are the recorded gap.
+python3 ../tools/upgrade_features.py --write
+python3 ../tools/upgrade_features.py --check
+
+# 5. The upstream MIT notice travels inside the archive: the content loader
+#    ignores a root LICENSE*, and MIT requires the copyright and permission
+#    notice with every copy of the artwork and data this package carries.
+cp LICENSE LICENSE-NOTICE.md README.md carry/
 echo "patches applied: $(ls patches/block | wc -l) block declarations, 1 creative tab, 10 restored recipes," \
-     "$(ls carry/data/regions_unexplored/worldgen/biome | wc -l) biomes + 671 advancements in 26.3 shapes"
+     "$(ls carry/data/regions_unexplored/worldgen/biome | wc -l) biomes + 671 advancements +" \
+     "$(ls carry/data/regions_unexplored/worldgen/feature | wc -l) features in 26.3 shapes"

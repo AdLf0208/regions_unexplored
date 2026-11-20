@@ -1,0 +1,168 @@
+{
+  "to_place": {
+    "entries": [
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "north",
+            "flower_amount": "1"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "east",
+            "flower_amount": "1"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "south",
+            "flower_amount": "1"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "west",
+            "flower_amount": "1"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "north",
+            "flower_amount": "2"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "east",
+            "flower_amount": "2"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "south",
+            "flower_amount": "2"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "west",
+            "flower_amount": "2"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "north",
+            "flower_amount": "3"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "east",
+            "flower_amount": "3"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "south",
+            "flower_amount": "3"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "west",
+            "flower_amount": "3"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "north",
+            "flower_amount": "4"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "east",
+            "flower_amount": "4"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "south",
+            "flower_amount": "4"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "regions_unexplored:silver_birch_leaf_pile",
+          "properties": {
+            "facing": "west",
+            "flower_amount": "4"
+          }
+        },
+        "weight": 1
+      }
+    ],
+    "type": "minecraft:weighted"
+  },
+  "type": "minecraft:simple_block"
+}

@@ -1,0 +1,9 @@
+{
+  "to_place": {
+    "id": "regions_unexplored:brimwood_shrub",
+    "properties": {
+      "half": "lower"
+    }
+  },
+  "type": "minecraft:simple_block"
+}

@@ -1,0 +1,9 @@
+{
+  "to_place": {
+    "id": "regions_unexplored:sandy_grass",
+    "properties": {
+      "is_red": "false"
+    }
+  },
+  "type": "minecraft:simple_block"
+}
