@@ -22,6 +22,24 @@ The port is **local-only until the maintainer approves publishing**
 (ARCHITECTURE.md §8). Ported now because it is the next feasible rank-0
 data-tier entry, dispatched explicitly by the orchestrator.
 
+**Upstream project:** <https://github.com/Apollounknowndev/RegionsUnexplored>
+(branch `21.1`, commit `ea78a0f`), Modrinth project `Tkikq67H`
+(<https://modrinth.com/mod/regions-unexplored>). Both the repository and
+Modrinth's `source_url` name that path; the port's own repository
+(`https://github.com/AdLf0208/regions_unexplored`) is where **this port's**
+source lives and is not upstream. The earlier notes named the same URL — the
+package now states it too (`content/README.md`, `content/LICENSE-NOTICE.md`).
+
+**The MIT notice ships inside the package (fixed 2026-11-20).** The jar ships
+no `LICENSE`/`COPYING`/`NOTICE` of its own, and MIT requires the copyright and
+permission notice to travel with every copy or substantial portion of the
+software — this package carries the mod's artwork and data, so
+`LICENSE` (the upstream MIT text, `Copyright (c) 2026 Apollo`),
+`LICENSE-NOTICE.md` and `README.md` are added to the `.hmod` root by
+`tools/notice.py` after the build (`cargo-horizon-mod` packs only the manifest,
+`assets/` and `data/`), and the same three files sit in `content/` beside the
+canonical copies.
+
 ## Provenance (no deviation)
 
 The exact ATM10 jar: `regions_unexplored-neoforge-1.21.1-0.5.9.jar` —
@@ -123,54 +141,94 @@ What it fixes:
 | `template_farmland` is not a 26.3 model | `peat/silt_farmland[_moist]` re-parented to `template_cube_bottom_top_indented` with 26.3's `bottom`/`side`/`top` slots | 4 models |
 | creative tab was code | `data/regions_unexplored/horizon/creative_tab/main.json`, title `itemGroup.regions_unexplored.main`, icon `prismarite_cluster`, **733 items** | 1 |
 
-## Worldgen verdict (the family that 26.3 cannot use)
+## Worldgen verdict — corrected 2026-11-20: the features load and 136 of them place
 
-**Corrected 2026-11-20 at the SDK pin `0b14f8a`.** The three limits below are the
-`1d63e0a` measurements. At `0b14f8a` the **71 biomes are read and registered**
-(their colours, sounds and spawns now live in the 26.3 `attributes` map — see
-*The 0b14f8a world-data shapes* below), and the 307 configured features are
-**refused at load** instead of failing at `/place` (0 of them reach the
-registry; the 343 placed features are kept and every one names a dropped
-feature). Limits 2–3 therefore still hold, with a different observable.
+**The earlier verdict ("26.3 cannot use the feature family") was wrong about the
+cause, and the listing overstated what worked.** The port's own measurements at
+`1d63e0a` and `0b14f8a` were right that **0** of the 307 configured features
+reached the registry, but the reason was not the feature schema: **26.3 renamed
+the registry folder.** 1.21.1 writes `data/<ns>/worldgen/configured_feature/`,
+26.3 reads `data/<ns>/worldgen/feature/` (vanilla's own data, and
+`horizon-client/src/mod_content.rs::worldgen_entry` reads
+`data/<ns>/worldgen/feature/<name>.json` only). A carried `configured_feature/`
+folder is never read at all — so no shape fix could have worked while the folder
+name was wrong.
 
-The jar's worldgen is carried **as data**, but at the `1d63e0a` pin the game did
-not process it. Three independent limits, each verified in-game or in the
-content root:
+Both defects are fixed in the carry pipeline (`tools/upgrade_features.py`, run
+by `content/patches/apply.sh` after a carry):
 
-1. **Biomes are not read from mods.** `mod_content` merges only biome
-   *modifiers* into the prepared `worldgen/biomes.json`; the 71 carried
-   `worldgen/biome/*.json` files are overlaid but never registered. The content
-   root's `worldgen/biomes.json` contains **0** `regions_unexplored:` keys, and
-   `/locate biome regions_unexplored:willow_forest` answers
-   `Can't find element … of type 'minecraft:worldgen/biome'`. TerraBlender's
-   region placement is Java and unported.
-2. **The carried feature configs are 1.21.1 shapes 26.3 rejects.** 26.3's
-   `minecraft:tree` requires `below_trunk_provider` and flat state providers
-   (`{id, properties}`); the carry leaves `dirt_provider` and wrapped
-   `simple_state_provider` objects. `minecraft:simple_block` rejects the
-   wrapped `to_place` provider. The game logs
-   `feature regions_unexplored:alpha_oak_tree cannot be placed: invalid world
-   generation field: trunk_provider` (and `to_place` for `barrel_cactus`)
-   while a vanilla `minecraft:oak` control places. See
-   [`../_shared/evidence/regions_unexplored/feature-probe.log`](../_shared/evidence/regions_unexplored/feature-probe.log).
-3. **Feature types.** 57 configured features use `minecraft:random_patch` and
-   25 `minecraft:flower`, which are not feature types in 26.3; 154 of the 307
-   use the mod's own Java types (`regions_unexplored:shrub`, `*_tree`,
-   `rock`, `vent`, `ivy`, …), which have no Rust implementation. The remaining
-   vanilla-typed ones (`tree`, `simple_block`, `disk`, `multiface_growth`,
-   huge mushrooms, selectors, waterlogged patches) still hit limit 2.
+1. **The folder is moved** to `worldgen/feature/` (307 files), so the loader
+   sees them.
+2. **The configs are converted to 26.3's shapes**: the `config` wrapper is
+   unwrapped; `simple_state_provider` becomes the bare state and
+   `weighted_state_provider`/`noise_provider` become `minecraft:weighted`/
+   `minecraft:noise`; the tree's `dirt_provider` becomes **`below_trunk_provider`**
+   (`force_dirt` has no 26.3 field); `random_patch` and `flower` (82 features)
+   become their inner configured feature plus `count(tries)` + a **trapezoid**
+   offset + the patch's own placement on every reference — vanilla's own
+   `patch_grass_normal.json` is exactly that shape; `forest_rock` becomes
+   `block_blob` with vanilla's `forest_rock_can_place_on` tag; the huge
+   mushrooms get the `can_place_on` predicate 26.3 requires; the disk's
+   type-less rule-based provider is named; and `minecraft:patch_cactus` is
+   renamed to 26.3's `minecraft:cactus` (26.3 kept `patch_cactus` as a *placed*
+   feature, so the old id names no configured feature).
 
-Consequence: the features/placed features are present in the content root's
-bundles (307 / 343 entries) but generate nothing and cannot be placed. The
-port does **not** rewrite 307 configs by hand — that is a carry/engine feature,
-not a content edit, and the 1.21.1→26.3 feature-schema migration is not
-mechanical (`random_patch`/`flower` have no 26.3 equivalent). This is the
-"whole worldgen family cannot be expressed" case the brief allows; the rest of
-the mod is kept.
+**Measured in game at `0b14f8a`:** 307/307 register, **136 place their block**
+and **171 do not**. The 171 are the files whose whole type graph 26.3 does not
+have: 154 use the mod's own Java feature types (`regions_unexplored:shrub`,
+`…_tree`, `rock`, `vent`, …), 4 use `nether_forest_vegetation` (no 26.3
+decoder; its 128-attempt spread is bonemeal-only and cannot be expressed), 2
+trees carry mod decorators (`chance_willow_trunk_decorator`,
+`willow_trunk_decorator`), 4 trees a mod foliage placer
+(`sakura_foliage_placer`, `willow_foliage_placer`), 1 multiface feature is a
+non-vanilla block (`regions_unexplored:hyacinth_flowers`; `vegetation.rs` only
+decodes `glow_lichen`/`sculk_vein`), and the rest use
+`randomized_int_state_provider`/`no_bonemeal_flower`, which 26.3 has no decoder
+for. Those files keep their carried bytes, are refused by the feature registry
+at placement time, and are the honest gap. The full per-file list is
+[`../_shared/evidence/regions_unexplored/upgrade-features-report.log`](../_shared/evidence/regions_unexplored/upgrade-features-report.log),
+the per-feature placement probe is
+[`feature-placement-probe.log`](../_shared/evidence/regions_unexplored/feature-placement-probe.log).
+
+**What still does not work: the biomes are not placed.** All 71 are registered
+with their 26.3 `attributes` (colours, music, particles, `natural_mob_spawns`),
+but TerraBlender's region placement is Java and unported, so
+`/locate biome regions_unexplored:willow_forest` answers *"Could not find a
+biome of type … within a reasonable distance"* and the 9
+`regions_unexplored:has_wolf_variant/*` biome tags have no generated biome. The
+features therefore appear through `/place feature`, not in generated terrain.
+The 2 noise files are inert.
 
 No structures, structure sets, template pools, processors, carvers, surface
 rules or density functions exist in this jar, so none are missing from the
 carry.
+
+## Coverage — every family the jar ships, and what is proven
+
+The parity rule's table. "Tested" names the `tools/e2e.sh` phase and the block
+the run counts after `/place feature`; every count is asserted with
+`fill … replace`, so a feature that does not place fails the run.
+
+| jar family | count | status | evidence |
+|---|---:|---|---|
+| `tree` (25 converted) | 33 | **tested** — `alpha_oak_tree` places 5 `alpha_log` | e2e "converted features place" |
+| `random_patch` (1.21.1) | 57 | **tested** — `patch_alpha_dandelion` places `alpha_dandelion` | e2e, same phase |
+| `flower` (1.21.1) | 25 | **tested** — `corpse_flower` places `corpse_flower` | e2e, same phase |
+| `simple_block` | 19 | **tested** — `aster` places `aster` | e2e, same phase |
+| `disk` | 3 | **tested** — `disk_clay` places 29 `minecraft:clay` | e2e, same phase |
+| huge mushrooms | 2 | **tested** — `giant_brown_mushroom` places 45 `brown_mushroom_block` | e2e, same phase |
+| `ore` | 1 | **tested** — `ore_redstone_large` places 22 `redstone_ore` | e2e, same phase |
+| `bamboo` | 1 | **tested** — `bamboo` places 14 `minecraft:bamboo` | e2e, same phase |
+| `waterlogged_vegetation_patch` | 2 | **tested** — `mineral_pool` places 507 `calcite` | e2e, same phase |
+| `forest_rock` (→ `block_blob`) | 1 | **tested** — `redwoods_rock` places 6 `mossy_cobblestone` | e2e, same phase |
+| `random_selector` | 1 | **tested** — `prairie_tree_mix` places 29 `oak_log` | e2e, same phase |
+| `multiface_growth` | 1 | **not ported** — the block is not a 26.3 `MultifaceSpreadeableBlock` | `feature-placement-probe.log` |
+| `nether_forest_vegetation` | 4 | **not ported** — no 26.3 decoder | `feature-placement-probe.log` |
+| the mod's own feature types | 154 | **not ported** — no Rust implementation in the pin | `feature-placement-probe.log` |
+| mod decorators / foliage placers | 6 | **not ported** — inside the mod's own types | `feature-placement-probe.log` |
+| biomes (registration) | 71 | **tested** — 71 registered with `attributes`; `/locate` resolves the id | e2e "content root" |
+| biomes (generation) | 71 | **blocked(terrabender)** — TerraBlender's placement is Java | e2e `/locate` differential |
+
 
 ## Gaps and deviations
 
@@ -180,11 +238,25 @@ carry.
   `/locate biome regions_unexplored:willow_forest` answers "Could not find a
   biome of type … within a reasonable distance" and the 9
   `regions_unexplored:has_wolf_variant/*` biome tags are in the bundle without a
-  biome that generates. The 307 configured features are refused at load (0
-  registered), the 343 placed features are kept and every one names a dropped
-  feature, and the 2 noise files are inert.
+  biome that generates. The 307 configured features register and **136 place
+  their block**; the other 171 are the files whose types 26.3 does not decode
+  (see the worldgen section and the coverage table), and the 2 noise files are
+  inert.
 - **Wolf variants** (9) are quarantined to `outside/data/minecraft/wolf_variant/`
   (another namespace; 1.21.1 registry, no 26.3 equivalent shipped).
+- **Feature configs that 26.3 has no decoder for** stay as the 1.21.1 bytes:
+  154 use the mod's own Java feature types, 4 `nether_forest_vegetation`, 6 a
+  mod decorator/foliage placer, 1 a non-vanilla multiface block, and the rest a
+  1.21.1-only provider/type (`randomized_int_state_provider`,
+  `no_bonemeal_flower`). They register but are refused when placed; the list is
+  in `upgrade-features-report.log`.
+- **The 82 `random_patch`/`flower` features are re-expressed, not reproduced
+  byte for byte.** 1.21.1 does the tries/spread inside the feature; 26.3 does it
+  with placement modifiers, so the converted file is the inner feature and each
+  reference gains `count(tries)` + a `trapezoid` offset. The offset is a
+  trapezoid because `RandomPatchFeature` offsets with
+  `nextInt(spread+1) - nextInt(spread+1)`, which is that distribution — the
+  same shape vanilla's `patch_grass_normal.json` uses.
 - **The neoforge compostables data map** and the jar's two vanilla recipe
   overrides (`minecraft:recipe/bamboo*`) are in `outside/` (other namespace;
   the content fence keeps them out).
@@ -234,11 +306,13 @@ above). Tooling and the `.hmod` built through `ports/tools/build-slot.sh` with
 |---|---|
 | `horizon-port-pack check <jar>` | **Partly**: 805 blocks, 41 items, 646 recipes port; 39 blocks + 10 recipes left out; 105 behaviour blocks, 2 entities, 74 worldgen classes skipped (`check-cli.txt`, `check.json`) |
 | `horizon-port-pack carry` | 7,323 files, 656 recipes, 790 loot, 733 item defs, **805 blocks (39 left out)**, 723 worldgen, 14 outside (`carry-cli.txt`, `carry-report.json`) |
-| `tools/gen_patches.py` + `apply.sh` | **523 patched declarations**, 39 left-out blocks declared, 88 sign forms, 93 potted, 10 recipes restored, 17 `c:` tags, 4 farmland models, 1 tab, **71 biomes + 671 advancements converted to 26.3 shapes** (`gen-patches.log`) |
+| `tools/gen_patches.py` + `apply.sh` | **523 patched declarations**, 39 left-out blocks declared, 88 sign forms, 93 potted, 10 recipes restored, 17 `c:` tags, 4 farmland models, 1 tab, **71 biomes + 671 advancements + 307 features moved to `worldgen/feature/` and converted** (`gen-patches.log`) |
 | `tools/verify_content.py` | **PASS**: 844 declarations = jar blockstates, 733 items, 656 recipes (results/ingredients/tags resolve), 790 loot, 5 lang files carried verbatim, every template checked against the prepared 26.3 tables, models/textures resolve except the jar's own 10 missing textures + 1 missing model, tags, 71 biomes + 307 + 343 + 2, 671 advancements, **every carried file in 26.3's shape**, 2 damage types, tab 733 (`verify-content.log`) |
 | `tools/upgrade_shapes.py --check` | **OK 71 biomes + 671 advancements in 26.3 shape (jar cross-check green)**; red on the jar's bytes: 96 files, exit 1 (`upgrade-shapes-check.log`, `verify-shapes-red.log`) |
+| `tools/upgrade_features.py --check` | **OK 307 configured features under `worldgen/feature/` (136 converted, 171 kept as carried), 343 placed features** (`upgrade-features-report.log`) |
 | `python3 -m unittest test_upgrade_shapes` | **26 tests, OK** (`unit-tests.log`) |
-| `cargo-horizon-mod build` ×2, `cmp` | identical — **4,694,401 B**, SHA-256 `1322d94974581955b38030988e19d580b923489f7b24f6f4ffd5e710f96ac29b`, **8,986 entries**, no `Cargo.lock` (`hmod-build.txt`, `hmod-info.txt`) |
+| `python3 -m unittest test_upgrade_features` | **19 tests, OK** (`upgrade-features-unit-tests.log`); the same suite on a converter with the `below_trunk_provider` fix reverted: **2 failures + 1 error** (`upgrade-features-unit-tests-red.log`) |
+| `cargo-horizon-mod build` ×2 + `tools/notice.py`, `cmp` | identical — **4,689,397 B**, SHA-256 `25a44d072cba73c1947aad4d181bcace57b6ec8e1587045582a9595c54f7ba5a`, **8,989 entries** (8,986 + LICENSE/LICENSE-NOTICE.md/README.md), no `Cargo.lock` (`hmod-build.txt`, `hmod-info.txt`) |
 | `cargo-horizon-mod check` | `regions_unexplored 0.5.9 (mod, API 0.2, both)` … **no code: content only, nothing to run**, unsigned (`hmod-check.txt`) |
 | `tools/e2e.sh` (default, `0b14f8a`) | **PASS + `EXIT:0`**; `e2e-default.log` / `../_shared/evidence/regions_unexplored-e2e/e2e-launcher.log` |
 | `NEGATIVE=1 tools/e2e.sh` | **`FAIL:` + `EXIT:1`** at the deliberately false `ashen_dirt` smouldering assertion; `e2e-negative.log` |
@@ -275,8 +349,8 @@ regions_unexplored:willow_forest -> Can't find element … of type 'minecraft:wo
 PASS: 844/844 block ids bind; 88 sign states, 27 leaves, 33 saplings, 4 multiface, 9 petal covers,
   3 pointed, 10 snowy, 2 farmland and 14 single-state blocks bind their patched states; 10 items
   give; 4 recipes craft while their controls stay empty; the content root holds 307 features +
-  343 placed features and 733 tab items but 0 mod biomes, and the game rejects the carried
-  features' 1.21.1 configs while the vanilla oak control places; a RU biome id is not locatable;
+  343 placed features and 733 tab items (that run predates the feature fix: it measured 0
+  registered, the `configured_feature/` folder was not read); a RU biome id is not locatable;
   unknown ids are refused
 ```
 
@@ -295,13 +369,25 @@ Transcript at `0b14f8a` (the delivered leg; abridged):
 content mod loaded (no 'content mods not loaded')
 the level opened: 'live features ready', no worldgen/advancement/attribute warning
 content root: 71 RU biomes (71 with natural_mob_spawns, 71 with a sky colour, 71 with background
-  music), 0 of the 307 configured features registered, 343 placed features (343 naming a dropped
-  feature), 733 tab items
+  music), 307/307 configured features registered under worldgen/feature/, 343 placed features
+  (342/343 naming a registered feature; `cactus_dense` names vanilla `minecraft:cactus`), 733 tab items
 844/844 block ids bind; 88 sign states; 27 leaves; 33 saplings; 4 multiface + 9 petal covers;
   3 pointed + 10 snowy + 2 farmland; 14 single-state blocks
 10 items give; 4 recipes craft (willow planks + tag, #c:yellow_dyes, #c:glass, the restored recipe)
 control: /place feature minecraft:oak placed 4 oak_log
-regions_unexplored:alpha_oak_tree -> Can't find element … in registry 'minecraft:worldgen/feature'
+regions_unexplored:alpha_oak_tree -> Placed "regions_unexplored:alpha_oak_tree" at 100, 83, 100
+  tree: regions_unexplored:alpha_log -> Successfully filled 5 block(s)
+regions_unexplored:patch_alpha_dandelion -> Placed …   random_patch: alpha_dandelion -> 1 block
+regions_unexplored:corpse_flower -> Placed …           flower: corpse_flower -> 1 block
+regions_unexplored:aster -> Placed …                   simple_block: aster -> 1 block
+regions_unexplored:disk_clay -> Placed …               disk: minecraft:clay -> 29 blocks
+regions_unexplored:giant_brown_mushroom -> Placed …    huge_mushroom: brown_mushroom_block -> 45
+regions_unexplored:ore_redstone_large -> Placed …      ore: minecraft:redstone_ore -> 22 blocks
+regions_unexplored:bamboo -> Placed …                  bamboo: minecraft:bamboo -> 14 blocks
+regions_unexplored:mineral_pool -> Placed …            waterlogged_vegetation_patch: calcite -> 507
+regions_unexplored:redwoods_rock -> Placed …           block_blob: mossy_cobblestone -> 6 blocks
+regions_unexplored:prairie_tree_mix -> Placed …        random_selector: minecraft:oak_log -> 29
+regions_unexplored:ocean_rock (kept, Java feature type) -> Can't find element … in registry
 minecraft:the_end -> The nearest minecraft:the_end is at [39, 80, 60] (0 blocks away)
 regions_unexplored:willow_forest -> Could not find a biome of type … within a reasonable distance
 regions_unexplored:not_a_biome -> Can't find element … of type 'minecraft:worldgen/biome'
@@ -355,17 +441,18 @@ package checks were green throughout.
 
 | Check | Result |
 |---|---|
-| `rm -f Cargo.lock`; `cargo test` / `clippy` / `fmt` | **n/a** — content-only port: no `Cargo.toml`, no `src/`; `python3 -m unittest test_upgrade_shapes` is the port's test suite (**26 tests, OK**, `unit-tests.log`) |
-| `cargo horizon-mod build` twice, `cmp` | **identical**, 4,694,401 B, SHA-256 `1322d949…`; `unzip -l` has **no `Cargo.lock`** (8,986 entries) (`hmod-build.txt`) |
+| `rm -f Cargo.lock`; `cargo test` / `clippy` / `fmt` | **n/a** — content-only port: no `Cargo.toml`, no `src/`; `python3 -m unittest test_upgrade_shapes` (**26 tests, OK**, `unit-tests.log`) and `test_upgrade_features` (**19 tests, OK**, `upgrade-features-unit-tests.log`) are the port's test suite |
+| `cargo horizon-mod build` twice + `tools/notice.py`, `cmp` | **identical**, 4,689,397 B, SHA-256 `25a44d07…`; `unzip -l` has **no `Cargo.lock`** (8,989 entries) (`hmod-build.txt`) |
 | `cargo horizon-mod check regions_unexplored.hmod` | `regions_unexplored 0.5.9 (mod, API 0.2, both)` … `no code: content only, nothing to run`, `CHECK_EXIT:0` (`sdk-check.log`) |
 | `cargo horizon-mod fits regions_unexplored.hmod --build 0b14f8a` | *"is a content mod … `fits` doesn't apply."*, `FITS_EXIT:2` = the tool's not-applicable status (`sdk-fits.log`) |
 | `python3 ports/tools/verify-sdk-package.py regions_unexplored` | **1/1** (package, content-only, check, fits, skills gate all `ok`) |
 | `tools/upgrade_shapes.py --check` | **OK 71 biomes + 671 advancements in 26.3 shape (jar cross-check green)** (`upgrade-shapes-check.log`); red on the jar's 1.21.1 bytes, 96 files, exit 1 (`verify-shapes-red.log`) |
-| `tools/verify_content.py` | **PASS**, including the 26.3 shape check (`verify-content.log`) |
+| `tools/verify_content.py` | **PASS**, including the 26.3 shape and feature checks (`verify-content.log`) |
+| `tools/upgrade_features.py --check` | **OK 307 features under `worldgen/feature/` (136 converted, 171 kept)** (`upgrade-features-report.log`) |
 | `tools/e2e.sh` at `0b14f8a` (control game, `--dev-mod content/carry`) | **PASS + `EXIT:0`** (`../_shared/evidence/regions_unexplored-e2e/e2e-launcher.log`, same bytes as `e2e-default.log`) |
 | `NEGATIVE=1 tools/e2e.sh` | **`FAIL:` + `EXIT:1`** at the deliberately false `ashen_dirt` smouldering assertion (`e2e-negative.log`) |
 | `tools/control_pre_fix.sh` (the jar's 1.21.1 shapes, same leg) | **`FAIL:` + `EXIT:1`**: 71 `biome attributes: attributes are not an object` warnings, then `invalid world generation field: type` and the game exits (`../_shared/evidence/regions_unexplored-e2e/e2e-control.log`) |
-| `python3 ports/tools/check-e2e-logs.py regions_unexplored regions_unexplored-e2e --strict` | `logs=5 ok=5 missing-exit=0 bad-exit=0`, exit 0 |
+| `python3 ports/tools/check-e2e-logs.py regions_unexplored regions_unexplored-e2e --strict` | `logs=6 ok=6 missing-exit=0 bad-exit=0`, exit 0 |
 
 The leg runs the **unmodified Nightly at `0b14f8a`**
 (`~/.cache/horizon-e2e/0b14f8a/control/`) with that Nightly's prepared 26.3
@@ -383,11 +470,11 @@ in-game evidence are in *The `0b14f8a` world-data shapes* below; the original
 diagnosis is `../_shared/evidence/regions_unexplored/0b14f8a-defect.md`.
 
 **Also measured at this pin** (the notes above are 1d63e0a facts): the 71 carried
-biomes **are** parsed now, their 26.3 colour/spawn data must move into the
+biomes **are** parsed now, and their 26.3 colour/spawn data must move into the
 `attributes` map (`minecraft:visual/*`, `minecraft:gameplay/natural_mob_spawns`)
-or it is dropped, and the feature-config rejection moved from `/place` to load:
-0 of the 307 configured features reach the registry, while the 343 placed
-features are kept and name dropped features.
+or it is dropped. The feature family needed a second, separate fix — the folder
+rename and the config shapes, in `tools/upgrade_features.py`; with it 307/307
+features register and 136 place (see *Worldgen verdict* above).
 
 ## The `0b14f8a` world-data shapes — fixed 2026-11-20 (in-game leg green)
 
@@ -457,32 +544,50 @@ with the file and reason.
   TerraBlender's placement is Java and unported), while
   `regions_unexplored:not_a_biome` → *"Can't find element … of type
   'minecraft:worldgen/biome'"* — the differential.
-- The 307 configured features are **refused at load** (0 registered; the old
-  `place`-time `trunk_provider` rejection is gone) and the 343 placed features
-  are kept, all naming a dropped feature. Recorded as the gap it is.
+- The 307 configured features **register** under `worldgen/feature/` and **136
+  place their block** (the per-family assertions in `tools/e2e.sh`); the other
+  171 are the types 26.3 has no decoder for. `tools/upgrade_features.py` owns
+  that fix and its `--check` runs in the e2e, so a re-carry cannot silently put
+  the `configured_feature/` folder back.
 - Controls: `NEGATIVE=1` flips the `ashen_dirt` assertion (`FAIL` + `EXIT:1`);
   `tools/control_pre_fix.sh` reverts the 742 files to the jar's bytes and the
   same leg reproduces the defect (`FAIL` + `EXIT:1`).
 
 Deviations: `effects.music.replace_current_music` is dropped (26.3's
 `background_music` has no such field; all 71 biomes set it `false`, which is
-26.3's behaviour). Feature configs and feature types remain the recorded gap.
+26.3's behaviour). The feature types 26.3 does not decode remain the recorded
+gap (the coverage table above).
 Worth an upstream report? No — the artefact is correct 1.21.1 data; 26.3 changed
-the shapes.
+the shapes and the folder name.
 
 **A re-carry cannot undo it.** Simulated by writing the jar's 742 biome and
 advancement files back into `content/carry` (the 1.21.1 bytes — what a carry
 that skipped those upgrades leaves), then running
 `content/patches/apply.sh`: `--check` is red on the re-carried tree (exit 1),
-`apply.sh` converts, and all **8,987 files** of `content/carry` are
+`apply.sh` converts, and all **8,987 content files** of `content/carry` are
 **byte-identical** to the tree the package was built and the leg run from
 (compared by sha256, including the 20 `enter_block` files). The conversion is
 code, not a hand edit.
 
-The tests were written first (`tools/test_upgrade_shapes.py`, 26 cases) and were
-red on the 1.21.1 content (the `PortContent` case and the `--check` fixpoint)
-before the conversion was implemented; `verify-shapes-red.log` keeps the red
-run against the jar's bytes (96 files, exit 1).
+The same simulation for the **feature tree** (2026-11-20): the carried
+`worldgen/configured_feature/` + `placed_feature/` folders were put back, the
+tool's `--check` is red on them (exit 1: wrong folder, 1.21.1 configs), and
+`--write` reproduces both delivered trees exactly — `diff -r` reports
+`FEATURE_TREES_IDENTICAL` and `PLACED_TREES_IDENTICAL`
+(`upgrade-features-recarry.log`).
+
+The shape tests were written first (`tools/test_upgrade_shapes.py`, 26 cases)
+and were red on the 1.21.1 content (the `PortContent` case and the `--check`
+fixpoint) before the conversion was implemented; `verify-shapes-red.log` keeps
+the red run against the jar's bytes (96 files, exit 1).
+
+The feature conversion was driven by the game (the reviewer's finding, then a
+load probe per candidate shape) and pinned by `tools/test_upgrade_features.py`
+(19 cases) afterwards; the suite's fail-capability is proven the other way
+round: on a copy of the converter with the `below_trunk_provider` mapping
+reverted, **2 tests fail and 1 errors**
+(`upgrade-features-unit-tests-red.log`). Its `--check` is also a fixpoint test —
+`write_tree` twice changes 0 files (`test_a_second_run_changes_nothing`).
 
 The package version stays **0.5.9**: it mirrors the upstream artefact
 (`regions_unexplored-neoforge-1.21.1-0.5.9.jar`) and the port has no published
@@ -491,17 +596,26 @@ recorded above.
 
 ## Artifacts
 
-- `ports/regions_unexplored/regions_unexplored.hmod` — **4,694,401 B**, SHA-256
-  `1322d94974581955b38030988e19d580b923489f7b24f6f4ffd5e710f96ac29b`, 8,986
-  entries, `no code`. (The pre-fix package was 4,686,932 B, `f096d884…`.)
+- `ports/regions_unexplored/regions_unexplored.hmod` — **4,689,397 B**, SHA-256
+  `25a44d072cba73c1947aad4d181bcace57b6ec8e1587045582a9595c54f7ba5a`, 8,989
+  entries (8,986 content entries + `LICENSE`, `LICENSE-NOTICE.md`, `README.md`),
+  `no code`. (The pre-fix package was 4,686,932 B, `f096d884…`; the package
+  before the feature fix and the notice was 4,694,401 B, `1322d949…`.)
 - `content/carry/` — the folder content mod (`horizon-mod.toml`, `assets/`,
   `data/`) that `--dev-mod` loads, beside `carry-report.json` and `outside/`
   (14 other-namespace files).
 - `content/patches/` — `block/` (523 declarations), `tab/main.json`,
   `data/c/tags/item/` (17 tags), `assets/.../models/block/` (4 farmland models),
-  `apply.sh` (runs `tools/upgrade_shapes.py --write` + `--check` last).
+  `apply.sh` (runs `tools/upgrade_shapes.py` and `tools/upgrade_features.py`
+  last, then copies the licence notice into `carry/`).
+- `content/LICENSE`, `content/LICENSE-NOTICE.md`, `content/README.md` — the
+  upstream MIT notice and the package's own docs; copied into `carry/` by
+  `apply.sh` and injected into the built `.hmod` by `tools/notice.py`.
 - `tools/` — `gen_patches.py` (regenerates the declarations from jar + raw
   carry), `upgrade_shapes.py` (the 26.3 world-data shapes, `--write`/`--check`),
+  `upgrade_features.py` (the `worldgen/feature/` rename and the 26.3 feature
+  shapes, `--write`/`--check`), `notice.py` (adds the licence notice to the
+  built archive), `test_upgrade_features.py` (19 tests),
   `test_upgrade_shapes.py` (23 unit + fixpoint tests),
   `verify_content.py` (jar-vs-content, including the shapes),
   `craft_check.py` (the four recipes), `e2e.sh` (default, `NEGATIVE=1`,
@@ -513,8 +627,10 @@ recorded above.
   `upgrade-shapes-check.log`, `verify-shapes-red.log`, `unit-tests.log`,
   `hmod-build.txt`, `hmod-info.txt`, `hmod-check.txt`, `sdk-check.log`,
   `sdk-fits.log`, `e2e-default.log`, `e2e-negative.log`, `e2e-1d63e0a.log`,
-  `feature-probe.log`, `0b14f8a-defect.md`, `0b14f8a-launch.log`,
-  `0b14f8a-launch-gamelog.txt`;
+  `feature-probe.log`, `feature-placement-probe.log`,
+  `upgrade-features-report.log`, `upgrade-features-unit-tests.log`,
+  `upgrade-features-unit-tests-red.log`, `0b14f8a-defect.md`,
+  `0b14f8a-launch.log`, `0b14f8a-launch-gamelog.txt`;
   `../_shared/evidence/regions_unexplored-e2e/e2e-launcher.log` (PASS) and
   `e2e-control.log` (FAIL, the pre-fix shapes); the red pre-fix runs are kept in
   `…-e2e/before-fix/`.
